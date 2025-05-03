@@ -1,0 +1,251 @@
+## Data Cleaning 
+
+```{r}
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+df <- read_csv("./data/data-zip/er-df-drop-missing.csv")
+head(df)
+```
+
+```{r}
+demographic <- c("AGER", "SEX", "ETHIM", "RACEUN", "RACERETH", "PAYTYPER")
+```
+
+
+```{r}
+triage <- c("VMONTH", "VDAYR", "WAITTIME", "LOV", "BPSYS", "BPDIAS", "PULSE", "RESPR", "PAINSCALE", "IMMEDR", "TEMPF")
+```
+
+```{r}
+injury <- c("INJURY", "INJURY72", "INTENT15", "INJURY_ENC", "CAUSE1", "CAUSE2", "CAUSE3")
+```
+
+### Basic haedling missing and unknown values
+
+```{r}
+# Helper: clean subset
+clean_subset <- function(df, vars, threshold = 0.95) {
+  df_sub <- df %>%
+    select(all_of(vars)) %>%
+    mutate(across(everything(), ~na_if(.x, "Blank"))) %>%
+    mutate(across(everything(), ~na_if(.x, "Not Applicable"))) %>%
+    mutate(across(everything(), ~na_if(.x, "Unknown"))) %>%
+    select(where(~mean(is.na(.)) < threshold)) %>%       # Drop columns with >95% NA
+    mutate(across(where(is.character), as.factor))       # Convert to factors
+  return(df_sub)
+}
+
+# Clean each subset
+demo_vars <- clean_subset(df, demographic)
+triage_vars <- clean_subset(df, triage)
+injury_vars <- clean_subset(df, injury)
+
+# Optional: Check summary
+summary(demo_vars)
+summary(triage_vars)
+summary(injury_vars)
+```
+
+
+```{r}
+demo_vars <- data.frame(demo_vars)
+demo_vars |> View()
+```
+
+
+```{r}
+triage_vars |> View()
+```
+
+
+```{r}
+injury_vars |> View()
+# table(injury_vars)
+```
+
+
+```{r}
+write.csv(demo_vars, "eda_data/demo_vars.csv", row.names = FALSE)
+write.csv(triage_vars, "eda_data/triage_vars.csv", row.names = FALSE)
+write.csv(injury_vars, "eda_data/injury_vars.csv", row.names = FALSE)
+```
+
+### 
+```{r}
+unique(demo_vars$RACEUN)
+library(forcats)
+
+demo_vars <- demo_vars %>%
+  mutate(
+    RACEUN = fct_na_value_to_level(as.factor(RACEUN), level = "Missing"),
+    PAYTYPER = fct_na_value_to_level(as.factor(PAYTYPER), level = "Missing")
+  )
+
+demo_vars <- demo_vars %>%
+  mutate(
+    RACEUN = recode(as.character(RACEUN),
+                    "Blank" = "Unknown",
+                    "Not Applicable" = "Unknown") %>%
+             as.factor() %>%
+             fct_na_value_to_level(level = "Missing"),
+
+    PAYTYPER = recode(as.character(PAYTYPER),
+                      "Blank" = "Unknown",
+                      "Not Applicable" = "Unknown") %>%
+               as.factor() %>%
+               fct_na_value_to_level(level = "Missing")
+  )
+
+demo_vars |> View()
+```
+
+```{r}
+library(caret)
+
+# Create dummy variables
+dummies <- dummyVars(~ ., data = demo_vars)
+
+# Transform into a data frame with one-hot encoded variables
+df_demo_encoded <- predict(dummies, newdata = demo_vars) |> as.data.frame()
+
+# View result
+head(df_demo_encoded)
+```
+
+```{r}
+df_demo_encoded |> View()
+```
+
+
+```{r}
+table(df$RACEUN)
+```
+
+
+```{r}
+write.csv(df_demo_encoded, "./processed_data/demo_vars.csv", row.names = FALSE)
+```
+
+
+```{r}
+triage_cats <- triage_vars |>
+  select(VMONTH, VDAYR, IMMEDR) |>
+  mutate(across(everything(), as.character)) |>  # Treat as strings
+  mutate(across(everything(), ~ifelse(is.na(.), "Missing", .))) |>  # Handle NA explicitly
+  mutate(across(everything(), as.factor))       
+
+triage_cats |> View()
+```
+
+```{r}
+dummies <- dummyVars(~ ., data = triage_cats)
+triage_encoded <- predict(dummies, newdata = triage_cats) %>% as.data.frame()
+
+# Combine with the rest of the triage variables
+triage_continuous <- triage_vars |>
+  select(-VMONTH, -VDAYR, -IMMEDR, -PAINSCALE)
+
+head(triage_continuous)
+```
+
+```{r}
+set.seed(123)
+
+triage_continuous_clean <- triage_continuous |>
+  mutate(across(everything(), ~ as.numeric(as.character(.))))
+
+# Function to randomly impute NA values using observed values
+random_impute <- function(x) {
+  if (is.numeric(x)) {
+    missing <- is.na(x)
+    x[missing] <- sample(x[!missing], sum(missing), replace = TRUE)
+  }
+  return(x)
+}
+
+triage_continuous_imputed <- triage_continuous_clean |>
+  mutate(across(where(is.numeric), random_impute))
+
+head(triage_continuous_imputed)
+```
+
+```{r}
+triage_final <- bind_cols(triage_continuous_imputed, triage_encoded)
+
+# Preview final dataset
+triage_final |> View()
+```
+
+```{r}
+write.csv(triage_final, "./processed_data/triage_vars.csv", row.names = FALSE)
+```
+
+
+```{r}
+injury_vars |> View()
+```
+
+
+```{r}
+# table(injury_vars$INJURY72)
+unique(injury_vars$INJURY_ENC)
+```
+
+
+```{r}
+injury_cleaned <- injury_vars |>
+  mutate(across(everything(), as.character))
+
+injury_cleaned <- injury_cleaned |>
+  mutate(across(everything(), ~ ifelse(is.na(.) | . %in% c("Unknown", "Unknown/intent unclear", "Questionable injury status"), "No", .)))
+
+injury_cleaned <- injury_cleaned %>%
+  mutate(across(everything(), as.factor))
+
+# Check cleaned values
+lapply(injury_cleaned, unique)
+```
+
+
+```{r}
+injury_cleaned |> View()
+```
+
+
+```{r}
+# Create dummy variables
+dummies <- dummyVars(~ ., data = injury_cleaned)
+
+# Transform into a data frame with one-hot encoded variables
+df_injury_encoded <- predict(dummies, newdata = injury_cleaned) |> as.data.frame()
+
+# View result
+head(df_injury_encoded)
+```
+
+
+```{r}
+df_injury_encoded |> View()
+```
+
+
+```{r}
+write.csv(df_injury_encoded, "./processed_data/injury_vars.csv", row.names = FALSE)
+```
+
+## Merge datasets
+
+```{r}
+# Drop rows: dieded, doa, nodisp, othdisp, retreffu and group
+groupings <- list(
+  Transferred = c("trannh", "tranoth", "tranpsyc"),
+  Admitted = c("admithos", "obsdis", "obshos"),
+  Discharged = c("nofu", "retrned"),
+  Left_Early = c("lbtc", "leftama", "lwbs"),
+)
+```

@@ -1,0 +1,339 @@
+---
+title: "Bind Columns"
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+files <- c("processed_data/cc-vars.csv", "processed_data/hosp-usage-vars.csv","processed_data/procedure-vars.csv",
+"processed_data/chornic-vars.csv",	"processed_data/hosp-vars.csv", "processed_data/triage_vars.csv",
+"processed_data/demo_vars.csv", "processed_data/injury_vars.csv","processed_data/diag-vars.csv","processed_data/med-vars.csv")
+```
+
+```{r}
+df_cc <- read_csv("processed_data/cc-vars.csv")
+df_usage <- read_csv("processed_data/hosp-usage-vars.csv")
+df_proc <- read_csv("processed_data/procedure-vars.csv")
+df_chron <- read_csv("processed_data/chornic-vars.csv")
+df_hosp <- read_csv("processed_data/hosp-vars.csv")
+df_triage <- read_csv("processed_data/triage_vars.csv")
+df_demo <- read_csv("processed_data/demo_vars.csv")
+df_injury <- read_csv("processed_data/injury_vars.csv")
+df_diag <- read_csv("processed_data/diag-vars.csv")
+df_med <- read_csv("processed_data/med-vars.csv")
+```
+
+```{r}
+full_df <- bind_cols(df_cc, df_usage, df_proc, df_chron, df_hosp, df_triage, df_demo, df_injury, df_diag, df_med)
+```
+
+```{r}
+df_disp <- ed_df |> dplyr::select(all_of(disp_cols))
+```
+
+```{r}
+df_full <- bind_cols(df_disp, full_df)
+```
+
+```{r}
+df_full |> filter(`HOSPCODE...17` != `HOSPCODE...107`)
+```
+
+```{r}
+df_full |> colnames() |> View()
+```
+
+```{r}
+prepared_df <- df_full |> mutate(admithos = case_when(
+    ADMITHOS == 'Yes' ~ 1,
+    TRUE ~ 0
+)
+)
+```
+```{r}
+set.seed(5300)
+train_indices <- sample(16025, 13622)
+
+df_train <- df_full |> slice(train_indices)
+df_test <- df_full |> slice(-train_indices)
+df_train |> dim()
+```
+
+```{r}
+
+```
+```{r}
+md <- glm(ADMITHOS ~., data = df_train, family = binomial)
+```
+
+[16025 x 777]
+
+### clean colnames
+
+
+```{r}
+clean_colnames <- c("NOFU", "RETRNED", "RETREFFU", "LWBS", "LBTC", "LEFTAMA", "DOA", 
+"DIEDED", "TRANNH", "TRANPSYC", "TRANOTH", "ADMITHOS", "OBSHOS", 
+"OBSDIS", "OTHDISP", "cc_Sx_digestive", 
+"cc_Sx_cardio_lymph", "cc_Sx_eyes_ears", "cc_Sx_neuro", "cc_Sx_respiratory", 
+"cc_Sx_genitourinary", "cc_Therapy_specific", "cc_Sx_general", 
+"cc_Sx_psych", "cc_Poisoning", "cc_Sx_skin_nails_hair", "cc_Sx_musculoskeletal", 
+"cc_Injuries", "cc_Injury_cause_status", "cc_Skin_dz", "cc_Test_results", 
+"cc_Exam_special", "cc_Dx_tests", "cc_Periop_care", "cc_Uncodable", 
+"cc_Blood_dz", "cc_Respiratory_dz", "cc_Digestive_dz", "cc_Mental_dz", 
+"cc_Endocrine_metabolic", "cc_Ear_dz", "cc_Genitourinary_dz", 
+"cc_Progress_visit", "cc_Exam_general", "cc_Medications", "cc_Circulatory_dz", 
+"cc_Eye_dz", "cc_Infectious_dz", "cc_Neoplasms", "cc_Nervous_dz", 
+"cc_Procedure_complication", "cc_Musculoskeletal_dz", "cc_Congenital", 
+"cc_Med_counseling", "cc_Administrative", "cc_Social_counseling", 
+"cc_Therapy_type", "cc_Preventive", "cc_Family_planning", "cc_Perinatal", 
+"cc_SIRS_sepsis", "cc_sum", "ARREMS", "arrtime", "seen72", "PROC", 
+"BPAP", "BLADCATH", "CASTSPLINT", "CENTLINE", "CPR", "ENDOINT", 
+"INCDRAIN", "IVFLUIDS", "LUMBAR", "NEBUTHER", "PELVIC", "SKINADH", 
+"SUTURE", "OTHPROC", "TOTPROC", "ETOHAB", "ALZHD", "ASTHMA", 
+"CANCER", "CEBVD", "CKD", "COPD", "CHF", "CAD", "DEPRN", "DIABTYP1", 
+"DIABTYP2", "DIABTYP0", "ESRD", "HPE", "EDHIV", "HYPLIPID", "HTN", 
+"OBESITY", "OSA", "OSTPRSIS", "SUBSTAB", "NOCHRON", "HOSPCODE107", 
+"PATCODE108", "MSA", "region_midwest", "region_northeast", 
+"region_south", "region_west", "emred_all", "emred_part", "emred_unk", 
+"hhsmue_yes", "hhsmue_no", "hhsmue_na", "hhsmue_unk", "p_ehrinse", 
+"edprim_freq", "edinfo_yes", "edinfo_no", "edinfo_unk", "edinfo_na", 
+"obsphysed_marked", "obsphysed_notmarked", "obsphysed_na", "ambdiv", 
+"divhr_500", "divhr_499", "divhr_99", "divhr_na", "divhr_unk", 
+"edinfo", "obsclin", "obssep", "board", "boardhos", "regdiv", 
+"admdiv", "incshx", "incphys", "expspace", "bedreg", "kioselchk", 
+"catriage", "imbed", "advtriag", "physpractria", "fasttrak", 
+"edptor", "dashbord", "rfid", "wireless", "zonenurs", "poolnurs", 
+"bedczar", "hlist", "hlisted", "emedres", "obsphysed_yes", "obsphysed_no", 
+"obshosp_yes", "obshosp_no", "obshosp_na", "obsphysot_yes", "obsphysot_no", 
+"obsphysot_na", "obsphysun_yes", "obsphysun_no", "obsphysun_na", 
+"surgday", "beddata_instant", "WAITTIME", "LOV", "BPSYS", "BPDIAS", 
+"PULSE", "RESPR", "TEMPF", "VMONTH_April", "VMONTH_August", "VMONTH_December", 
+"VMONTH_February", "VMONTH_January", "VMONTH_July", "VMONTH_June", 
+"VMONTH_March", "VMONTH_May", "VMONTH_November", "VMONTH_October", 
+"VMONTH_September", "VDAYR_Friday", "VDAYR_Monday", "VDAYR_Saturday", 
+"VDAYR_Sunday", "VDAYR_Thursday", "VDAYR_Tuesday", "VDAYR_Wednesday", 
+"IMMEDR_Emergent", "IMMEDR_Immediate", "IMMEDR_Missing", "IMMEDR_No triage for this visit but ESA does conduct triage", 
+"IMMEDR_Nonurgent", "IMMEDR_Semi_urgent", "IMMEDR_Urgent", "IMMEDR_Visit occurred in ESA that does not conduct nursing triage", 
+"AGER_15_24 years", "AGER_25_44 years", "AGER_45_64 years", "AGER_65_74 years", 
+"AGER_75 years and over", "AGER_Under 15 years", "SEX_Female", 
+"SEX_Male", "ETHIM_Hispanic or Latino", "ETHIM_Not Hispanic or Latino", 
+"RACEUN_American Indian/Alaska Native Only", "RACEUN_Asian Only", 
+"RACEUN_Black/African American Only", "RACEUN_Missing", "RACEUN_More than one race reported", 
+"RACEUN_Native Hawaiian/Oth Pac Isl Only", "RACEUN_White Only", 
+"RACERETH_Hispanic", "RACERETH_Non_Hispanic Black", "RACERETH_Non_Hispanic Other", 
+"RACERETH_Non_Hispanic White", "PAYTYPER_All sources of payment are blank", 
+"PAYTYPER_Medicaid or CHIP or other state_based program", "PAYTYPER_Medicare", 
+"PAYTYPER_Missing", "PAYTYPER_No charge/Charity", "PAYTYPER_Other", 
+"PAYTYPER_Private insurance", "PAYTYPER_Self_pay", "PAYTYPER_Worker's compensation", 
+"INJURY_No", "INJURY_Yes", "INJURY72_No", "INJURY72_Yes", "INTENT15_Intentional", 
+"INTENT15_No", "INTENT15_Unintentional", "INJURY_ENC_Both initial and sequela encounter codes present", 
+"INJURY_ENC_Both initial and subsequent encounter codes present", 
+"INJURY_ENC_Initial encounter for injury", "INJURY_ENC_No", "INJURY_ENC_Sequela encounter for injury", 
+"INJURY_ENC_Subsequent encounter for injury", "CAUSE1__9", "CAUSE1_V000", 
+"CAUSE1_V001", "CAUSE1_V002", "CAUSE1_V003", "CAUSE1_V008", "CAUSE1_V030", 
+"CAUSE1_V031", "CAUSE1_V039", "CAUSE1_V049", "CAUSE1_V090", "CAUSE1_V092", 
+"CAUSE1_V132", "CAUSE1_V134", "CAUSE1_V139", "CAUSE1_V179", "CAUSE1_V180", 
+"CAUSE1_V182", "CAUSE1_V189", "CAUSE1_V193", "CAUSE1_V199", "CAUSE1_V234", 
+"CAUSE1_V274", "CAUSE1_V279", "CAUSE1_V280", "CAUSE1_V282", "CAUSE1_V284", 
+"CAUSE1_V289", "CAUSE1_V290", "CAUSE1_V294", "CAUSE1_V298", "CAUSE1_V299", 
+"CAUSE1_V405", "CAUSE1_V409", "CAUSE1_V425", "CAUSE1_V426", "CAUSE1_V434", 
+"CAUSE1_V435", "CAUSE1_V436", "CAUSE1_V437", "CAUSE1_V445", "CAUSE1_V446", 
+"CAUSE1_V449", "CAUSE1_V470", "CAUSE1_V471", "CAUSE1_V475", "CAUSE1_V476", 
+"CAUSE1_V480", "CAUSE1_V481", "CAUSE1_V484", "CAUSE1_V485", "CAUSE1_V493", 
+"CAUSE1_V494", "CAUSE1_V495", "CAUSE1_V496", "CAUSE1_V498", "CAUSE1_V499", 
+"CAUSE1_V535", "CAUSE1_V575", "CAUSE1_V582", "CAUSE1_V584", "CAUSE1_V586", 
+"CAUSE1_V595", "CAUSE1_V596", "CAUSE1_V749", "CAUSE1_V784", "CAUSE1_V786", 
+"CAUSE1_V799", "CAUSE1_V800", "CAUSE1_V834", "CAUSE1_V837", "CAUSE1_V856", 
+"CAUSE1_V863", "CAUSE1_V865", "CAUSE1_V866", "CAUSE1_V869", "CAUSE1_V877", 
+"CAUSE1_V879", "CAUSE1_V888", "CAUSE1_V890", "CAUSE1_V892", "CAUSE1_V899", 
+"CAUSE1_V918", "CAUSE1_V938", "CAUSE1_V940", "CAUSE1_V971", "CAUSE1_W000", 
+"CAUSE1_W009", "CAUSE1_W010", "CAUSE1_W011", "CAUSE1_W03X", "CAUSE1_W04X", 
+"CAUSE1_W050", "CAUSE1_W06X", "CAUSE1_W07X", "CAUSE1_W08X", "CAUSE1_W090", 
+"CAUSE1_W092", "CAUSE1_W098", "CAUSE1_W100", "CAUSE1_W101", "CAUSE1_W108", 
+"CAUSE1_W109", "CAUSE1_W11X", "CAUSE1_W132", "CAUSE1_W134", "CAUSE1_W139", 
+"CAUSE1_W14X", "CAUSE1_W160", "CAUSE1_W164", "CAUSE1_W165", "CAUSE1_W171", 
+"CAUSE1_W172", "CAUSE1_W178", "CAUSE1_W180", "CAUSE1_W181", "CAUSE1_W182", 
+"CAUSE1_W183", "CAUSE1_W184", "CAUSE1_W19X", "CAUSE1_W208", "CAUSE1_W210", 
+"CAUSE1_W212", "CAUSE1_W218", "CAUSE1_W220", "CAUSE1_W228", "CAUSE1_W230", 
+"CAUSE1_W231", "CAUSE1_W25X", "CAUSE1_W260", "CAUSE1_W268", "CAUSE1_W269", 
+"CAUSE1_W270", "CAUSE1_W272", "CAUSE1_W278", "CAUSE1_W28X", "CAUSE1_W290", 
+"CAUSE1_W293", "CAUSE1_W294", "CAUSE1_W298", "CAUSE1_W311", "CAUSE1_W312", 
+"CAUSE1_W318", "CAUSE1_W319", "CAUSE1_W320", "CAUSE1_W340", "CAUSE1_W38X", 
+"CAUSE1_W450", "CAUSE1_W458", "CAUSE1_W460", "CAUSE1_W461", "CAUSE1_W490", 
+"CAUSE1_W500", "CAUSE1_W501", "CAUSE1_W502", "CAUSE1_W51X", "CAUSE1_W540", 
+"CAUSE1_W541", "CAUSE1_W548", "CAUSE1_W550", "CAUSE1_W551", "CAUSE1_W552", 
+"CAUSE1_W555", "CAUSE1_W558", "CAUSE1_W57X", "CAUSE1_W591", "CAUSE1_W60X", 
+"CAUSE1_W613", "CAUSE1_W69X", "CAUSE1_W868", "CAUSE1_W890", "CAUSE1_W930", 
+"CAUSE1_X000", "CAUSE1_X001", "CAUSE1_X021", "CAUSE1_X088", "CAUSE1_X100", 
+"CAUSE1_X101", "CAUSE1_X102", "CAUSE1_X110", "CAUSE1_X12X", "CAUSE1_X131", 
+"CAUSE1_X150", "CAUSE1_X153", "CAUSE1_X18X", "CAUSE1_X19X", "CAUSE1_X30X", 
+"CAUSE1_X31X", "CAUSE1_X32X", "CAUSE1_X500", "CAUSE1_X501", "CAUSE1_X503", 
+"CAUSE1_X509", "CAUSE1_X58X", "CAUSE1_X780", "CAUSE1_X781", "CAUSE1_X788", 
+"CAUSE1_X789", "CAUSE1_X838", "CAUSE1_X950", "CAUSE1_X959", "CAUSE1_X990", 
+"CAUSE1_X991", "CAUSE1_X999", "CAUSE1_Y00X", "CAUSE1_Y040", "CAUSE1_Y041", 
+"CAUSE1_Y042", "CAUSE1_Y048", "CAUSE1_Y074", "CAUSE1_Y075", "CAUSE1_Y080", 
+"CAUSE1_Y088", "CAUSE1_Y09_", "CAUSE1_Y249", "CAUSE1_Y280", "CAUSE1_Y289", 
+"CAUSE1_Y33X", "CAUSE1_Y353", "CAUSE1_Y354", "CAUSE1_Y358", "CAUSE1_Y362", 
+"CAUSE1_Y654", "CAUSE1_Y771", "CAUSE1_Y831", "CAUSE1_Y833", "CAUSE1_Y834", 
+"CAUSE1_Y836", "CAUSE1_Y838", "CAUSE1_Y839", "CAUSE1_Y841", "CAUSE1_Y842", 
+"CAUSE1_Y846", "CAUSE1_Y848", "CAUSE1_Y849", "CAUSE1_Y920", "CAUSE1_Y921", 
+"CAUSE1_Y924", "CAUSE1_Y930", "CAUSE1_Y932", "CAUSE1_Y934", "CAUSE1_Y936", 
+"CAUSE1_Y938", "CAUSE1_Y93H", "CAUSE1_Y998", "CAUSE2__9", "CAUSE2_V001", 
+"CAUSE2_V471", "CAUSE2_V480", "CAUSE2_V484", "CAUSE2_V582", "CAUSE2_V890", 
+"CAUSE2_V918", "CAUSE2_W000", "CAUSE2_W009", "CAUSE2_W010", "CAUSE2_W011", 
+"CAUSE2_W03X", "CAUSE2_W04X", "CAUSE2_W06X", "CAUSE2_W109", "CAUSE2_W132", 
+"CAUSE2_W164", "CAUSE2_W178", "CAUSE2_W180", "CAUSE2_W183", "CAUSE2_W19X", 
+"CAUSE2_W208", "CAUSE2_W220", "CAUSE2_W221", "CAUSE2_W228", "CAUSE2_W230", 
+"CAUSE2_W25X", "CAUSE2_W260", "CAUSE2_W268", "CAUSE2_W272", "CAUSE2_W278", 
+"CAUSE2_W450", "CAUSE2_W458", "CAUSE2_W500", "CAUSE2_W501", "CAUSE2_W51X", 
+"CAUSE2_W541", "CAUSE2_W548", "CAUSE2_W551", "CAUSE2_W558", "CAUSE2_X500", 
+"CAUSE2_X501", "CAUSE2_X509", "CAUSE2_X58X", "CAUSE2_X781", "CAUSE2_X789", 
+"CAUSE2_X810", "CAUSE2_Y00X", "CAUSE2_Y040", "CAUSE2_Y048", "CAUSE2_Y070", 
+"CAUSE2_Y071", "CAUSE2_Y074", "CAUSE2_Y075", "CAUSE2_Y076", "CAUSE2_Y079", 
+"CAUSE2_Y09_", "CAUSE2_Y358", "CAUSE2_Y359", "CAUSE2_Y839", "CAUSE2_Y846", 
+"CAUSE2_Y920", "CAUSE2_Y921", "CAUSE2_Y922", "CAUSE2_Y923", "CAUSE2_Y924", 
+"CAUSE2_Y925", "CAUSE2_Y926", "CAUSE2_Y927", "CAUSE2_Y928", "CAUSE2_Y930", 
+"CAUSE2_Y931", "CAUSE2_Y932", "CAUSE2_Y933", "CAUSE2_Y934", "CAUSE2_Y935", 
+"CAUSE2_Y936", "CAUSE2_Y937", "CAUSE2_Y938", "CAUSE2_Y93B", "CAUSE2_Y93E", 
+"CAUSE2_Y93F", "CAUSE2_Y93G", "CAUSE2_Y93H", "CAUSE2_Y93K", "CAUSE2_Y990", 
+"CAUSE2_Y991", "CAUSE2_Y998", "CAUSE3__9", "CAUSE3_W228", "CAUSE3_W269", 
+"CAUSE3_Y041", "CAUSE3_Y070", "CAUSE3_Y071", "CAUSE3_Y074", "CAUSE3_Y079", 
+"CAUSE3_Y849", "CAUSE3_Y920", "CAUSE3_Y921", "CAUSE3_Y922", "CAUSE3_Y923", 
+"CAUSE3_Y924", "CAUSE3_Y925", "CAUSE3_Y926", "CAUSE3_Y927", "CAUSE3_Y928", 
+"CAUSE3_Y930", "CAUSE3_Y931", "CAUSE3_Y932", "CAUSE3_Y934", "CAUSE3_Y935", 
+"CAUSE3_Y936", "CAUSE3_Y937", "CAUSE3_Y938", "CAUSE3_Y93G", "CAUSE3_Y93H", 
+"CAUSE3_Y93K", "CAUSE3_Y990", "CAUSE3_Y991", "CAUSE3_Y998", "A09_yes", 
+"A09_no", "A419_yes", "A419_no", "A89_yes", "A89_no", "B192_yes", 
+"B192_no", "B349_yes", "B349_no", "C269_yes", "C269_no", "C443_yes", 
+"C443_no", "C900_yes", "C900_no", "D180_yes", "D180_no", "E116_yes", 
+"E116_no", "E279_yes", "E279_no", "F121_yes", "F121_no", "F29_yes", 
+"F29_no", "G439_yes", "G439_no", "G934_yes", "G934_no", "H811_yes", 
+"H811_no", "I213_yes", "I213_no", "I269_yes", "I269_no", "I509_yes", 
+"I509_no", "I639_yes", "I639_no", "I952_yes", "I952_no", "J010_yes", 
+"J010_no", "J012_yes", "J012_no", "J111_yes", "J111_no", "J218_yes", 
+"J218_no", "J459_yes", "J459_no", "J690_yes", "J690_no", "J841_yes", 
+"J841_no", "J969_yes", "J969_no", "J980_yes", "J980_no", "K259_yes", 
+"K259_no", "K358_yes", "K358_no", "K37_yes", "K37_no", "K566_yes", 
+"K566_no", "K579_yes", "K579_no", "K590_yes", "K590_no", "K859_yes", 
+"K859_no", "L031_yes", "L031_no", "L089_yes", "L089_no", "L989_yes", 
+"L989_no", "M008_yes", "M008_no", "M949_yes", "M949_no", "N133_yes", 
+"N133_no", "N451_yes", "N451_no", "N832_yes", "N832_no", "O009_yes", 
+"O009_no", "O600_yes", "O600_no", "O758_yes", "O758_no", "O80_yes", 
+"O80_no", "R098_yes", "R098_no", "R188_yes", "R188_no", "R198_yes", 
+"R198_no", "R202_yes", "R202_no", "R418_yes", "R418_no", "R569_yes", 
+"R569_no", "R788_yes", "R788_no", "S015_yes", "S015_no", "S060_yes", 
+"S060_no", "S462_yes", "S462_no", "S560_yes", "S560_no", "S621_yes", 
+"S621_no", "S824_yes", "S824_no", "S839_yes", "S839_no", "T172_yes", 
+"T172_no", "T189_yes", "T189_no", "T404_yes", "T404_no", "T407_yes", 
+"T407_no", "T424_yes", "T424_no", "T509_yes", "T509_no", "T780_yes", 
+"T780_no", "T814_yes", "T814_no", "T828_yes", "T828_no", "U071_yes", 
+"U071_no", "Z038_yes", "Z038_no", "Z202_yes", "Z202_no", "Z203_yes", 
+"Z203_no", "Z208_yes", "Z208_no", "Z770_yes", "Z770_no", "n_med_er", 
+"n_med_dis", "med_binary")
+
+```
+
+```{r}
+full_df <- df_full |> dplyr::select(-`HOSPCODE...17`, -`PATCODE...16`)
+```
+
+```{r}
+colnames(full_df) <- clean_colnames
+```
+
+```{r}
+full_df |> View()
+```
+
+```{r}
+full_df |> write_csv('processed_data/df_full.csv')
+```
+
+##
+
+```{r}
+full_df <- full_df |> mutate(across(all_of(disp_cols), 
+                .fns = ~ case_when(.x == "Yes" ~ 1L, TRUE ~ 0L),
+                .names = "{tolower(.col)}"))
+```
+
+```{r}
+full_df$nofu |> table()
+```
+
+```{r}
+full_df |> select(-disp_cols) |> write_csv('processed_data/df_full.csv')
+```
+
+```{r}
+full_df <- full_df |> select(-disp_cols)
+```
+
+## defining Y
+
+
+```{r}
+disp_lower <- c("nofu", "retrned", "retreffu", "lwbs", 
+"lbtc", "leftama", "doa", "dieded", "trannh", "tranpsyc", "tranoth", 
+"admithos", "obshos", "obsdis", "othdisp")
+prior_cols <- c(
+  "doa", "dieded", "leftama", "lbtc", "lwbs", "retrned", "trannh", "tranpsyc", "tranoth",
+  "obshos", "obsdis", "admithos", "retreffu", "nofu", "othdisp"
+)
+```
+
+```{r}
+full_df |> 
+  mutate(non_yes = rowSums(across(all_of(prior_cols), ~tolower(.) == 1)) == 0) |> 
+  count(non_yes)
+
+```
+
+```{r}
+full_df |> filter(disp == 'UNKNOWN') |> View()
+```
+
+```{r}
+full_df$disp <- apply(full_df[, prior_cols], 1, function(row) {
+  for (col in prior_cols) {
+    if (row[[col]] == 1) {
+      return(col)
+    }
+  }
+  return("UNKNOWN")
+}) 
+```
+
+```{r}
+disp_tb <- full_df |> count(disposition, .drop = FALSE)
+```
+
+```{r}
+sum(disp_tb$n)
+```
+
+```{r}
+ed_df |> filter(HOSPCODE == 34, PATCODE == 4) |> View()
+```
+
+```{r}
+full_df <- full_df |> mutate(disposition = case_when(
+    disp == 'UNKNOWN' ~ 'nodisp',
+    TRUE ~ disp
+))
+```
+
+```{r}
+full_df |> select(-disp, -all_of(disp_lower)) |> write_csv('processed_data/df_full.csv')
+```
+
+```{r}
+fini_df <- full_df |> select(-disp, -all_of(disp_lower)) 
+```
+
+```{r}
+fini_df |> View()
+```

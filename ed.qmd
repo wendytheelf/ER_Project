@@ -1,0 +1,187 @@
+## ED Exploratory
+
+```{r}
+library(readr)
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+
+er_df <- read_csv("./data/ed2022.csv")
+head(er_df)
+```
+
+```{r}
+# View missing values in the dataset
+er_df |> summarise(across(everything(), ~sum(is.na(.)))) |>
+  pivot_longer(cols = everything(),
+               names_to = "column",
+               values_to = "missing_count") %>%
+  arrange(desc(missing_count)) -> missing_table
+
+missing_table |> View()
+```
+
+```{r}
+# unzip("data-zip.zip", exdir = "./data")
+```
+
+```{r}
+df <- read_csv("./data/data-zip/er-df-drop-missing.csv")
+# df |> View()
+```
+
+```{r}
+# Convert multiple binary columns into a single target column
+disposition_vars <- c("RETRNED", "RETREFFU", "NOFU", "ADMITHOS", "OTHDISP", "OBSDIS", "OBSHOS", "TRANOTH", "TRANPSYC", "TRANNH", "DIEDED", "DOA", "LEFTAMA", "LBTC", "LWBS")
+
+df$DISPOSITION <- apply(df[, disposition_vars], 1, function(row) {
+  match <- names(row)[row == "Yes"]
+  if (length(match) == 1) {
+    return(match)
+  } else if (length(match) > 1) {
+    return("MULTIPLE")
+  } else {
+    return("UNKNOWN")
+  }
+})
+df$DISPOSITION
+```
+
+```{r}
+# Define disposition groups
+disposition_groups <- list(
+  Died = c("DIEDED", "DOA"),
+  Transferred = c("TRANOTH", "TRANPSYC", "TRANNH"),
+  Admitted = c("ADMITHOS", "OBSHOS"),
+  Discharged = c("RETREFFU", "RETRNED", "NOFU"),
+  Left_Early = c("LEFTAMA", "LBTC", "LWBS"),
+  Other = c("OBSDIS", "OTHDISP", "NODISP")
+)
+
+# Create a new column initialized as "Other"
+df$DISPOSITION_GROUP <- "Other"
+
+# Assign values by group priority (Died > Transferred > ...)
+for (group_name in names(disposition_groups)) {
+  vars <- disposition_groups[[group_name]]
+  df$DISPOSITION_GROUP[apply(df[, vars] == "Yes", 1, any)] <- group_name
+}
+
+# Check distribution
+table(df$DISPOSITION_GROUP)
+```
+
+```{r}
+# Filter out 'Other' group
+df_clean <- df %>% filter(DISPOSITION_GROUP != "Other")
+
+```
+
+```{r}
+df_clean$DISPOSITION
+```
+
+## Multiclass Classification
+
+```{r}
+library(tidyverse)
+library(caret)
+library(nnet)
+library(MLmetrics)
+```
+
+```{r}
+df <- read_csv("./data/data-zip/er-df-drop-missing.csv")
+demo_vars <- read_csv("./processed_data/demo_vars.csv")
+triage_vars <- read_csv("./processed_data/triage_vars.csv")
+injury_vars <- read_csv("./processed_data/injury_vars.csv")
+```
+
+```{r}
+disposition_vars <- c("RETRNED", "RETREFFU", "NOFU", "ADMITHOS", "OTHDISP", "OBSDIS", "OBSHOS", "TRANOTH", "TRANPSYC", "TRANNH", "DIEDED", "DOA", "LEFTAMA", "LBTC", "LWBS")
+
+priority_order <- c(
+  "DOA", "DIEDED", "LEFTAMA", "LBTC", "LWBS", "TRANNH", "TRANPSYC", "TRANOTH",
+  "OBSHOS", "OBSDIS", "ADMITHOS", "RETREFFU", "RETRNED", "NOFU", "OTHDISP"
+)
+
+df$DISPOSITION <- apply(df[, priority_order], 1, function(row) {
+  for (col in priority_order) {
+    if (row[[col]] == "Yes") {
+      return(col)
+    }
+  }
+  return("UNKNOWN")
+})
+# df$DISPOSITION
+```
+
+```{r}
+table(df$DISPOSITION)
+```
+
+```{r}
+df_full <- read_csv('./processed_data/df_full.csv')
+df_full |> View()
+```
+
+```{r}
+df_full |>
+  select(RETRNED, RETREFFU, NOFU, ADMITHOS, OTHDISP, OBSDIS, OBSHOS, TRANOTH, TRANPSYC, TRANNH, DIEDED, DOA, LEFTAMA, LBTC, LWBS) |>
+  mutate(across(everything(), as.character))|>
+  mutate(across(everything(), as.factor)) 
+
+df_full |> View()
+```
+
+```{r}
+X <- bind_cols(demo_vars, triage_vars, injury_vars)
+y <- df$DISPOSITION
+
+df_model <- bind_cols(X, y = y) |>
+  mutate(y = as.factor(y))
+```
+
+```{r}
+# Train Test split
+train_index <- createDataPartition(df_model$y, p = 0.8, list = FALSE)
+train_df <- df_model[train_index, ]
+test_df  <- df_model[-train_index, ]
+```
+
+
+```{r}
+X_train <- train_df |> select(-y)
+X_test  <- test_df |> select(-y)
+y_train <- train_df$y
+y_test  <- test_df$y
+```
+
+```{r}
+# Change column names
+colnames(X_train) <- make.names(colnames(X_train))
+colnames(X_test) <- make.names(colnames(X_test))
+```
+
+```{r}
+train_data <- data.frame(y_train = y_train, X_train)
+test_data  <- data.frame(y_test = y_test, X_test)
+```
+
+```{r}
+model_logit <- multinom(y_train ~ ., data = train_data, MaxNWts = 50000)
+```
+
+```{r}
+y_pred <- predict(model_logit, newdata = X_test)
+# conf_mat <- confusionMatrix(y_pred, y_test)
+# print(conf_mat)
+```
+
+```{r}
+conf_mat <- caret::confusionMatrix(y_pred, y_test)
+print(conf_mat)
+```

@@ -1,0 +1,167 @@
+---
+title: 'Feature Selection'
+date: 2025-04-20
+format: 
+    html:
+        embed-resources: true
+---
+
+## Target
+
+16025 observations
+unique row identifier: PATCODE + HOSPCODE
+
+```{.r}
+er_df |> distinct(PATCODE, HOSPCODE) |> nrow()
+```
+
+```{r}
+dispostion_vars <- c("NODISP", "NOFU", "RETRNED", "RETREFFU", "LWBS", "LBTC", 
+"LEFTAMA", "DOA", "DIEDED", "TRANNH", "TRANPSYC", "TRANOTH", 
+"ADMITHOS", "OBSHOS", "OBSDIS", "OTHDISP")
+```
+
+| visit disposition       | count | description                                         |
+|-----------|-------|-----------------------------------------------------|
+| NODISP    | 0     | No answer to item                                   |
+| NOFU      | 1202  | No follow-up planned                                |
+| RETRNED   | 2062  | Return to ED                                        |
+| RETREFFU  | 10824 | Return/Refer to physician/clinic for FU             |
+| LWBS      | 327   | Left without being seen (LWBS)                      |
+| LBTC      | 221   | Left before treatment complete (LBTC)               |
+| LEFTAMA   | 228   | Left AMA (against medical advice)                   |
+| DOA       | 9     | DOA (dead on arrival)                               |
+| DIEDED    | 33    | Died in ED                                          |
+| TRANNH    | 101   | Return/transfer to nursing home                     |
+| TRANPSYC  | 150   | Transfer to psychiatric hospital                    |
+| TRANOTH   | 206   | Transfer to non-psychiatric hospital                |
+| ADMITHOS  | 2121  | Admit to this hospital                              |
+| OBSHOS    | 177   | Admit to observation unit, then hospitalized        |
+| OBSDIS    | 214   | Admit to observation unit, then discharged          |
+| OTHDISP   | 310   | Other visit disposition                             |
+
+**3** Broad Categories
+
+## Features Overview
+
+915 cols
+
+#### Patient Demographics
+```{r}
+demographic <- c("AGER", "SEX", "ETHIM", "RACEUN", "RACERETH", "PAYTYPER")
+```
+
+#### Triage Variables
+
+```{r}
+triage <- c("VMONTH", "VDAYR", "WAITTIME", "LOV", "BPSYS", "BPDIAS", "PULSE", "RESPR", "PAINSCALE", "IMMEDR", "TEMPF")
+```
+
+#### Hospital Usage Variables
+
+```{r}
+hospital_usage <- c("ARREMS", "ARRTIME", "SEEN72")
+```
+
+```{r}
+hosp_vars <- c("HOSPCODE", "PATCODE", "EMRED", "HHSMUE", 
+"EHRINSE", "EDPRIM", "EDINFO", "OBSCLIN", "OBSSEP", "OBSPHYSED", 
+"OBSHOSP", "OBSPHYSOT", "OBSPHYSUN", "BOARD", "BOARDHOS", "AMBDIV", 
+"TOTHRDIVR", "REGDIV", "ADMDIV", "INCSHX", "INCPHYS", "EXPSPACE", 
+"BEDREG", "KIOSELCHK", "CATRIAGE", "IMBED", "ADVTRIAG", "PHYSPRACTRIA", 
+"FASTTRAK", "EDPTOR", "DASHBORD", "RFID", "WIRELESS", "ZONENURS", 
+"POOLNURS", "SURGDAY", "BEDCZAR", "BEDDATA", "HLIST", "HLISTED", 
+"EMEDRES", "REGION", "MSA")
+```
+
+#### Injury Variables
+
+```{r}
+injury <- c("INJURY", "INJURY72", "INTENT15", "INJURY_ENC", "CAUSE1", "CAUSE2", "CAUSE3")
+```
+
+#### Sample Weights
+
+```{r}
+wt_vars <- c("PATWT", "EDWT", "BOARDED")
+```
+
+#### Patient Chief Complaint Variables
+
+Reason of Visit (specific/broad)
+```{r}
+reason_vars <- c("RFV1", "RFV2", "RFV3", "RFV4", 
+"RFV5", "RFV13D", "RFV23D", "RFV33D", "RFV43D", "RFV53D")
+```
+
+#### Chronical
+
+NOCHRON: yes/no/blank
+TOTCHRON: numeric
+else: binary
+
+```{r}
+chron_vars <- c("ETOHAB", "ALZHD", "ASTHMA", "CANCER", "CEBVD", "CKD", "COPD", 
+"CHF", "CAD", "DEPRN", "DIABTYP1", "DIABTYP2", "DIABTYP0", "ESRD", 
+"HPE", "EDHIV", "HYPLIPID", "HTN", "OBESITY", "OSA", "OSTPRSIS", 
+"SUBSTAB", "NOCHRON")
+```
+
+#### Provider's Diagnosis
+
+```{r}
+diag_vars <- c("DIAG1", "DIAG2", "DIAG3", "DIAG4", 
+"DIAG5", "PRDIAG1", "PRDIAG2", "PRDIAG3", "PRDIAG4", "PRDIAG5")
+```
+
+DIAGSCRN
+
+TOTDIAG: numeric
+
+```{r}
+diag_test <- c("DIAGSCRN", "ABG", "BAC", "BMP", 
+"BNP", "BUNCREAT", "CARDENZ", "CBC", "CMP", "BLOODCX", "TRTCX", 
+"URINECX", "WOUNDCX", "OTHCX", "DDIMER", "ELECTROL", "GLUCOSE", 
+"LACTATE", "LFT", "PTTINR", "OTHERBLD", "CARDMON", "EKG", "HIVTEST", 
+"FLUTEST", "PREGTEST", "TOXSCREN", "URINE", "OTHRTEST", "ANYIMAGE", 
+"XRAY", "CATSCAN", "CTCONTRAST", "CTAB", "CTCHEST", "CTHEAD", 
+"CTOTHER", "CTUNK", "MRI", "MRICONTRAST", "ULTRASND", "OTHIMAGE", 
+"COVIDTEST", "COVIDANTIBODY", "TOTDIAG")
+```
+
+#### Miscellaneous variables
+
+```{r}
+procedure_vars <- c("PROC", "BPAP", "BLADCATH", 
+"CASTSPLINT", "CENTLINE", "CPR", "ENDOINT", "INCDRAIN", "IVFLUIDS", "LUMBAR", "NEBUTHER", "PELVIC", "SKINADH", "SUTURE", "OTHPROC", "TOTPROC")
+```
+```{r}
+med_vars <- c("MED","NUMGIV", "NUMDIS", "NUMMED")
+```
+```{r}
+vitals_after_triage <- c("VITALSD", "TEMPDF", 
+"PULSED", "RESPRD", "BPSYSD", "BPDIASD")
+```
+```{r}
+seen_vars <- c("NOPROVID", "ATTPHYS", 
+"RESINT", "CONSULT", "RNLPN", "NURSEPR", "PHYSASST", "EMT", "MHPROV", 
+"OTHPROV")
+```
+
+#### admitted to hosptial
+
+Shouldn't be included
+
+```{r}
+admithos_vars <- c("ADMIT", "ADMTPHYS", 
+"LOS", "HDDIAG1", "HDDIAG2", "HDDIAG3", "HDDIAG4", "HDDIAG5", 
+"HDSTAT", "ADISP", "OBSSTAY", "STAY24")
+```
+
+```{r}
+
+```
+
+```{r}
+length(demographic) + length(chron_vars) + length(diag_test) + length(hosp_vars) + length(hospital_usage) + length(injury) + length(med_vars) + length(procedure_vars) + length(reason_vars) + length(triage) + length(seen_vars) + length(diag_vars)
+```

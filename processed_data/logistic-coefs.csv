@@ -1,0 +1,1092 @@
+disp_group,predictor,coefficient,rank,var_group
+admit,CAUSE1_Y075,6.010613069189877,1,Injury Variables
+admit,O80_no,5.2637048676716,2,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_168,-3.604468675869632,3,Hospital Info
+admit,hospcode_160,-3.534192698010493,4,Hospital Info
+admit,K358_no,3.3160485228054126,5,Diagnosis and Med Provider Evaluation Variables
+admit,K566_no,3.1747595579137835,6,Diagnosis and Med Provider Evaluation Variables
+admit,CAUSE3_Y074,3.1325116560448927,7,Injury Variables
+admit,T814_no,3.1129241385579745,8,Diagnosis and Med Provider Evaluation Variables
+admit,R188_yes,2.6123432539228975,9,Diagnosis and Med Provider Evaluation Variables
+admit,CAUSE1_V865,2.4889802233597944,10,Injury Variables
+admit,hospcode_113,-2.4848318380470404,11,Hospital Info
+admit,CAUSE2_W011,2.4588412379505407,12,Injury Variables
+admit,CAUSE1_X788,-2.430052492518009,13,Injury Variables
+admit,hospcode_32,2.3534509553633187,14,Hospital Info
+admit,hospcode_47,-2.309347170674528,15,Hospital Info
+admit,T189_no,2.307939844480338,16,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_166,-2.307315581939559,17,Hospital Info
+admit,hospcode_93,-2.1294327602131298,18,Hospital Info
+admit,CAUSE1_V294,2.093471387793979,19,Injury Variables
+admit,CAUSE2_Y074,2.036999574953859,20,Injury Variables
+admit,CAUSE1_W340,2.0112832923464863,21,Injury Variables
+admit,hospcode_99,-1.982973744407747,22,Hospital Info
+admit,CAUSE1_V436,1.966381488759711,23,Injury Variables
+admit,hospcode_105,-1.9511335585865204,24,Hospital Info
+admit,LUMBAR,-1.8781206040809437,25,Procedure Variables
+admit,T404_no,1.8118160850634413,26,Diagnosis and Med Provider Evaluation Variables
+admit,J690_no,1.7490305577348633,27,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_60,-1.7484460657924816,28,Hospital Info
+admit,K358_yes,1.746332997019778,29,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_62,1.72858570635247,30,Hospital Info
+admit,R788_no,1.7265750839461886,31,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_2,1.6544200394779265,32,Hospital Info
+admit,G934_no,1.6371823742820095,33,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_52,-1.5861808548094214,34,Hospital Info
+admit,hospcode_69,1.5702138039598101,35,Hospital Info
+admit,L089_no,1.552378437955835,36,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_157,1.5032460465485635,37,Hospital Info
+admit,T424_no,1.4996628074126892,38,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_28,1.4903842436861354,39,Hospital Info
+admit,L031_yes,1.4843748772976144,40,Diagnosis and Med Provider Evaluation Variables
+admit,A419_no,1.4261960078826936,41,Diagnosis and Med Provider Evaluation Variables
+admit,CAUSE1_Y839,1.4138155275218036,42,Injury Variables
+admit,(Intercept),-1.3868317209863767,43,Other
+admit,CAUSE2_Y93H,1.3596825413805953,44,Injury Variables
+admit,hospcode_125,-1.3577625270247138,45,Hospital Info
+admit,I269_no,1.348401735103224,46,Diagnosis and Med Provider Evaluation Variables
+admit,K37_no,1.3472609097488926,47,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_153,-1.3048307119245237,48,Hospital Info
+admit,CAUSE1_V834,1.2686360513536814,49,Injury Variables
+admit,hospcode_40,-1.2173985792327038,50,Hospital Info
+admit,CAUSE1_X838,1.2054562376712534,51,Injury Variables
+admit,hospcode_49,-1.204706990262045,52,Hospital Info
+admit,hospcode_131,-1.1712989061100876,53,Hospital Info
+admit,I639_no,1.1326613371739649,54,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_144,-1.121596740653893,55,Hospital Info
+admit,CAUSE3_Y921,-1.117595659803365,56,Injury Variables
+admit,cc_Eye_dz,1.1135037733519677,57,Chief Complaint Variables
+admit,ENDOINT,1.0925063770723382,58,Procedure Variables
+admit,U071_yes,-1.083828291750531,59,Diagnosis and Med Provider Evaluation Variables
+admit,E279_no,1.0638311936983222,60,Diagnosis and Med Provider Evaluation Variables
+admit,IMMEDR_Semi_urgent,-1.0516405258584092,61,Info Collected at Triage
+admit,hospcode_115,-1.0406389602094805,62,Hospital Info
+admit,G439_no,-1.014418912607368,63,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_39,-1.0092070887206073,64,Hospital Info
+admit,hospcode_70,-0.9937324736781625,65,Hospital Info
+admit,hospcode_171,0.9841189149188784,66,Hospital Info
+admit,F121_no,-0.9801279919903833,67,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_18,0.9729564355878085,68,Hospital Info
+admit,hospcode_143,0.9718820853876738,69,Hospital Info
+admit,hospcode_98,-0.9665448778167753,70,Hospital Info
+admit,hospcode_15,-0.9569209315928155,71,Hospital Info
+admit,S824_no,0.9378911268895206,72,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_145,-0.9357551049950781,73,Hospital Info
+admit,hospcode_108,-0.9281055252963673,74,Hospital Info
+admit,hospcode_31,-0.9257073151052381,75,Hospital Info
+admit,CAUSE2_Y076,-0.9172936388065633,76,Injury Variables
+admit,CAUSE1_V877,0.8753603495447073,77,Injury Variables
+admit,L031_no,0.8522633896383058,78,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_158,0.8509429823932463,79,Hospital Info
+admit,IMMEDR_Emergent,0.8467941495756367,80,Info Collected at Triage
+admit,hospcode_141,0.8466089484287114,81,Hospital Info
+admit,IMMEDR_Immediate,0.8423594321820477,82,Info Collected at Triage
+admit,`AGER_75 years and over`,0.8297700163375216,83,Other
+admit,hospcode_73,0.8092188150711993,84,Hospital Info
+admit,CAUSE1_V039,0.7877056714424588,85,Injury Variables
+admit,CAUSE1_V279,0.7688050272989712,86,Injury Variables
+admit,IVFLUIDS,0.7567745650911165,87,Procedure Variables
+admit,R188_no,0.7404191112034602,88,Diagnosis and Med Provider Evaluation Variables
+admit,K859_no,0.739076771076094,89,Diagnosis and Med Provider Evaluation Variables
+admit,T814_yes,0.7284388571708071,90,Diagnosis and Med Provider Evaluation Variables
+admit,cc_Test_results,0.7267711476908443,91,Chief Complaint Variables
+admit,hospcode_140,0.7177234422623252,92,Hospital Info
+admit,CAUSE1_W181,0.712573633473922,93,Injury Variables
+admit,PELVIC,0.7075124421954261,94,Procedure Variables
+admit,hospcode_95,-0.6970383971385954,95,Hospital Info
+admit,I509_no,0.6925402542670182,96,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_88,-0.6811662408249065,97,Hospital Info
+admit,hospcode_72,0.6780957407504297,98,Hospital Info
+admit,hospcode_121,0.6648796978247661,99,Hospital Info
+admit,hospcode_91,0.6566891261968086,100,Hospital Info
+admit,hospcode_110,0.6393975092876425,101,Hospital Info
+admit,CAUSE1_V918,0.6388270578498754,102,Injury Variables
+admit,hospcode_12,0.6341213885911903,103,Hospital Info
+admit,hospcode_151,-0.6278990138234014,104,Hospital Info
+admit,U071_no,0.627542165075067,105,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_124,0.6116871938990248,106,Hospital Info
+admit,SUTURE,-0.6089109966377654,107,Procedure Variables
+admit,R569_no,0.6064372870694441,108,Diagnosis and Med Provider Evaluation Variables
+admit,ARREMS,0.6039308086502088,109,Procedure Variables
+admit,CAUSE3_Y990,0.5995500398910019,110,Injury Variables
+admit,J111_no,-0.5873808497458367,111,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_135,-0.5785392175803824,112,Hospital Info
+admit,hospcode_178,0.5774324988494753,113,Hospital Info
+admit,CAUSE2_X789,-0.5773019604077917,114,Injury Variables
+admit,hospcode_184,-0.5729930364428886,115,Hospital Info
+admit,hospcode_55,-0.5678985580343495,116,Hospital Info
+admit,IMMEDR_Missing,0.5622201672652002,117,Info Collected at Triage
+admit,hospcode_75,-0.5549750803821197,118,Hospital Info
+admit,CAUSE1_Y838,0.5546747700807364,119,Injury Variables
+admit,R418_no,0.5505002938566795,120,Diagnosis and Med Provider Evaluation Variables
+admit,CAUSE1_X101,0.5458027501847281,121,Injury Variables
+admit,hospcode_45,0.53325111937581,122,Hospital Info
+admit,CAUSE1_V485,0.5311587078412499,123,Injury Variables
+admit,F29_no,0.5308593394231568,124,Diagnosis and Med Provider Evaluation Variables
+admit,cc_Social_counseling,-0.5300766225535319,125,Chief Complaint Variables
+admit,hospcode_71,0.5207627533943069,126,Hospital Info
+admit,I639_yes,0.5147419153109151,127,Diagnosis and Med Provider Evaluation Variables
+admit,bedreg,0.5140624677690296,128,Hospital ED Info Variables
+admit,cc_Therapy_specific,-0.5108963624203402,129,Chief Complaint Variables
+admit,`AGER_Under 15 years`,-0.5101871157970075,130,Other
+admit,hospcode_185,-0.48909847646116117,131,Hospital Info
+admit,CEBVD,0.4879875804244028,132,Chronic Disease Variables
+admit,hospcode_147,0.48095526777691194,133,Hospital Info
+admit,obsphysun_yes,-0.4638140676877109,134,Hospital ED Info Variables
+admit,`PAYTYPER_No charge/Charity`,-0.46121954050410563,135,Other
+admit,MSA,0.449035118895499,136,Hospital ED Info Variables
+admit,N133_no,0.4458995786275813,137,Diagnosis and Med Provider Evaluation Variables
+admit,CAUSE1_W57X,-0.4442737962530776,138,Injury Variables
+admit,hospcode_59,0.44075523003033257,139,Hospital Info
+admit,`AGER_65_74 years`,0.43979778370202993,140,Other
+admit,hospcode_132,-0.42840376425417104,141,Hospital Info
+admit,hospcode_183,0.42391504527259044,142,Hospital Info
+admit,INTENT15_Intentional,-0.41840903733925483,143,Injury Variables
+admit,CAUSE1_W182,-0.4173650825902849,144,Injury Variables
+admit,DIABTYP2,0.41629875781300424,145,Chronic Disease Variables
+admit,CAUSE1_Y93H,0.40810924821308925,146,Injury Variables
+admit,cc_Respiratory_dz,-0.3807871854392945,147,Chief Complaint Variables
+admit,hospcode_41,0.3802410801784213,148,Hospital Info
+admit,`PAYTYPER_All sources of payment are blank`,-0.3767687521829493,149,Other
+admit,CAUSE1_V008,0.3692589756281218,150,Injury Variables
+admit,ETOHAB,0.36294518923693575,151,Chronic Disease Variables
+admit,hospcode_29,-0.35689399859924,152,Hospital Info
+admit,CKD,0.34913070399449125,153,Chronic Disease Variables
+admit,OBESITY,0.34519265897508333,154,Chronic Disease Variables
+admit,CHF,0.3381082702425449,155,Chronic Disease Variables
+admit,hospcode_35,-0.33423393244011285,156,Hospital Info
+admit,NOCHRON,-0.33374387285131596,157,Chronic Disease Variables
+admit,hospcode_24,0.3214138798241867,158,Hospital Info
+admit,hospcode_163,0.3117516075191472,159,Hospital Info
+admit,beddata_instant,0.30726615594111056,160,Hospital ED Info Variables
+admit,hospcode_96,-0.3041292533129188,161,Hospital Info
+admit,BPAP,0.30348158378593965,162,Procedure Variables
+admit,CAUSE1_X959,0.288001542440251,163,Injury Variables
+admit,ESRD,0.27723717997532743,164,Chronic Disease Variables
+admit,T828_no,-0.27387712699059663,165,Diagnosis and Med Provider Evaluation Variables
+admit,cc_Poisoning,-0.27243739138492873,166,Chief Complaint Variables
+admit,CAUSE2_W010,-0.2638910337987111,167,Injury Variables
+admit,R202_no,0.2596180855318721,168,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_138,0.2594025120329149,169,Hospital Info
+admit,CAUSE1_V800,0.2576928608777405,170,Injury Variables
+admit,hospcode_50,-0.25614401183007823,171,Hospital Info
+admit,n_med_er,0.2535335923144327,172,Other
+admit,HTN,0.2535204449511205,173,Chronic Disease Variables
+admit,B192_no,-0.25122566295420223,174,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_117,0.2502795558429277,175,Hospital Info
+admit,CAUSE1_Y998,-0.24128289136985656,176,Injury Variables
+admit,hospcode_10,-0.2316326932238141,177,Hospital Info
+admit,hospcode_177,-0.22532520128791036,178,Hospital Info
+admit,SUBSTAB,-0.22504921386255874,179,Chronic Disease Variables
+admit,hospcode_139,0.22347812840191814,180,Hospital Info
+admit,region_south,-0.222682837589748,181,Hospital ED Info Variables
+admit,PROC,0.21669297724684267,182,Procedure Variables
+admit,hospcode_30,0.20969730645474532,183,Hospital Info
+admit,CAUSE1_Y836,0.2089068210767606,184,Injury Variables
+admit,hospcode_6,0.20840224342218042,185,Hospital Info
+admit,CAUSE2_Y075,0.20352360195622612,186,Injury Variables
+admit,BLADCATH,0.2021724559742243,187,Procedure Variables
+admit,`RACEUN_Asian Only`,0.2011789179426251,188,Other
+admit,R098_no,-0.19862931317596347,189,Diagnosis and Med Provider Evaluation Variables
+admit,cc_Infectious_dz,0.1948632288530818,190,Chief Complaint Variables
+admit,VMONTH_October,0.19469727182336177,191,Info Collected at Triage
+admit,CAUSE1_W178,0.19425689349365344,192,Injury Variables
+admit,cc_Exam_general,0.19308970360723385,193,Chief Complaint Variables
+admit,CANCER,0.186489201309232,194,Chronic Disease Variables
+admit,hospcode_186,0.18543448389138242,195,Hospital Info
+admit,hospcode_130,-0.169341677525158,196,Hospital Info
+admit,S060_no,-0.16912264023530324,197,Diagnosis and Med Provider Evaluation Variables
+admit,PAYTYPER_Self_pay,-0.16895316351616052,198,Patient Socioeconomic Demographic Variables
+admit,IMMEDR_Nonurgent,-0.15925593754065456,199,Info Collected at Triage
+admit,physpractria,0.15147980217824897,200,Hospital ED Info Variables
+admit,COPD,0.14296576865949007,201,Chronic Disease Variables
+admit,CAUSE1_X500,0.14039892800111156,202,Injury Variables
+admit,cc_Circulatory_dz,0.1398577694356681,203,Chief Complaint Variables
+admit,cc_Neoplasms,0.13398599868719138,204,Chief Complaint Variables
+admit,hospcode_112,0.13248999226339606,205,Hospital Info
+admit,cc_Mental_dz,0.13220950748745336,206,Chief Complaint Variables
+admit,hospcode_170,0.12972546524695558,207,Hospital Info
+admit,K579_no,0.1281657491092766,208,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_57,0.12419460526588966,209,Hospital Info
+admit,CAUSE1_W268,-0.1187298767075978,210,Injury Variables
+admit,hospcode_152,-0.11730094918045907,211,Hospital Info
+admit,VMONTH_August,-0.1113537533184643,212,Info Collected at Triage
+admit,N832_yes,0.11112615901426143,213,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_129,-0.10819146775865388,214,Hospital Info
+admit,cc_Preventive,-0.09863403833386349,215,Chief Complaint Variables
+admit,hospcode_19,0.0982737842915706,216,Hospital Info
+admit,`AGER_25_44 years`,-0.09711513922865066,217,Other
+admit,ASTHMA,-0.09588134841176764,218,Chronic Disease Variables
+admit,TOTPROC,0.09082929794510335,219,Procedure Variables
+admit,cc_Med_counseling,0.086260450395705,220,Chief Complaint Variables
+admit,`RACEUN_More than one race reported`,0.08441879205572578,221,Other
+admit,CAUSE2_Y935,0.08428697026702733,222,Injury Variables
+admit,hospcode_150,0.08243304806773948,223,Hospital Info
+admit,hospcode_79,0.07963295767695255,224,Hospital Info
+admit,DEPRN,0.07833839619900804,225,Chronic Disease Variables
+admit,hospcode_87,0.07529145477340758,226,Hospital Info
+admit,`RACEUN_Black/African American Only`,-0.0704073003616769,227,Other
+admit,HYPLIPID,0.059746620155537424,228,Chronic Disease Variables
+admit,VDAYR_Thursday,0.058350655207162004,229,Info Collected at Triage
+admit,admdiv,0.049714346662361686,230,Hospital ED Info Variables
+admit,fasttrak,0.049092442629127986,231,Hospital ED Info Variables
+admit,cc_Sx_psych,0.04724596064360453,232,Chief Complaint Variables
+admit,hospcode_23,0.047234424366153126,233,Hospital Info
+admit,CAUSE2_Y079,0.04560135256025612,234,Injury Variables
+admit,cc_Sx_neuro,-0.04494647622353996,235,Chief Complaint Variables
+admit,`ETHIM_Hispanic or Latino`,0.043072004988461726,236,Other
+admit,hospcode_116,-0.042966749103717526,237,Hospital Info
+admit,hospcode_37,-0.04269239239401768,238,Hospital Info
+admit,cc_Injuries,-0.0414793056603082,239,Chief Complaint Variables
+admit,`AGER_45_64 years`,0.04065676597115528,240,Other
+admit,cc_Sx_eyes_ears,-0.037048797917740954,241,Chief Complaint Variables
+admit,cc_Sx_genitourinary,0.0329083264392605,242,Chief Complaint Variables
+admit,hospcode_103,0.03014635295504034,243,Hospital Info
+admit,CAUSE1_W011,-0.02920330815802118,244,Injury Variables
+admit,`RACERETH_Non_Hispanic Other`,0.022798995753618524,245,Other
+admit,hospcode_92,0.02239035096814165,246,Hospital Info
+admit,OSTPRSIS,-0.02218093270061382,247,Chronic Disease Variables
+admit,region_northeast,0.018762752984942663,248,Hospital ED Info Variables
+admit,H811_no,-0.014423971522452528,249,Diagnosis and Med Provider Evaluation Variables
+admit,hospcode_90,-0.01421176222822103,250,Hospital Info
+admit,cc_Sx_cardio_lymph,0.011913532991519442,251,Chief Complaint Variables
+admit,hospcode_20,0.011138815391692985,252,Hospital Info
+admit,hospcode_3,-0.010774772377954859,253,Hospital Info
+admit,cc_Procedure_complication,-0.009180674097495315,254,Chief Complaint Variables
+admit,CAUSE3_Y849,-0.008899578653106503,255,Injury Variables
+admit,C900_no,-0.00878487817880058,256,Diagnosis and Med Provider Evaluation Variables
+admit,RESPR,0.0059599577717638335,257,Initial Vitals Variables
+admit,BPSYS,-0.005478590893485965,258,Initial Vitals Variables
+admit,EDHIV,0.005296220714301912,259,Chronic Disease Variables
+admit,PULSE,0.0012812381263119326,260,Initial Vitals Variables
+admit,LOV,7.773301851672308e-4,261,Hospital Usage Variables
+admit,`ETHIM_Not Hispanic or Latino`,-7.477605782882588e-5,262,Other
+discharge,CAUSE1_Y042,4.480075875443017,1,Injury Variables
+discharge,hospcode_81,3.7697771945077703,2,Hospital Info
+discharge,CAUSE1_V879,3.5850988909181916,3,Injury Variables
+discharge,CAUSE1_V890,3.3317113467463666,4,Injury Variables
+discharge,hospcode_151,3.086619093646355,5,Hospital Info
+discharge,hospcode_31,2.941425167767577,6,Hospital Info
+discharge,hospcode_175,2.8611161761533404,7,Hospital Info
+discharge,hospcode_28,2.745560071803505,8,Hospital Info
+discharge,CAUSE1_V480,2.6935019110030844,9,Injury Variables
+discharge,hospcode_38,-2.4750076817102484,10,Hospital Info
+discharge,J010_no,2.4584077899457437,11,Diagnosis and Med Provider Evaluation Variables
+discharge,CAUSE2_W009,2.4214297923466375,12,Injury Variables
+discharge,hospcode_22,2.375256113944211,13,Hospital Info
+discharge,S621_no,2.20289503401278,14,Diagnosis and Med Provider Evaluation Variables
+discharge,hospcode_180,2.1870299051840862,15,Hospital Info
+discharge,hospcode_8,2.1704469688209644,16,Hospital Info
+discharge,hospcode_27,2.149010607748614,17,Hospital Info
+discharge,hospcode_138,2.1325167819493513,18,Hospital Info
+discharge,hospcode_16,2.00556583005112,19,Hospital Info
+discharge,hospcode_33,1.9991701174685297,20,Hospital Info
+discharge,hospcode_79,1.9745110962675796,21,Hospital Info
+discharge,T404_yes,1.9316219463925122,22,Diagnosis and Med Provider Evaluation Variables
+discharge,hospcode_80,1.904977278460389,23,Hospital Info
+discharge,N451_yes,1.8826949531438566,24,Diagnosis and Med Provider Evaluation Variables
+discharge,hospcode_64,1.850650813033879,25,Hospital Info
+discharge,CAUSE1_Y289,1.8477385874064924,26,Injury Variables
+discharge,hospcode_47,1.806643560625666,27,Hospital Info
+discharge,hospcode_14,1.7516340127853975,28,Hospital Info
+discharge,hospcode_13,1.7502203604135185,29,Hospital Info
+discharge,hospcode_149,1.7463463206804373,30,Hospital Info
+discharge,J111_yes,1.7313228315130442,31,Diagnosis and Med Provider Evaluation Variables
+discharge,H811_no,1.691829495029228,32,Diagnosis and Med Provider Evaluation Variables
+discharge,CAUSE1_V294,-1.6838248328571495,33,Injury Variables
+discharge,CAUSE2_V001,1.6499801675472268,34,Injury Variables
+discharge,hospcode_165,1.6457211171108632,35,Hospital Info
+discharge,CAUSE2_Y937,1.5724905284793596,36,Injury Variables
+discharge,hospcode_141,-1.5587579419816853,37,Hospital Info
+discharge,hospcode_134,1.5537076927256503,38,Hospital Info
+discharge,hospcode_40,1.516536622772353,39,Hospital Info
+discharge,CAUSE1_V866,1.5133545813054905,40,Injury Variables
+discharge,hospcode_174,1.5009950889693104,41,Hospital Info
+discharge,hospcode_135,1.4757870650352896,42,Hospital Info
+discharge,R098_no,1.4734336331959865,43,Diagnosis and Med Provider Evaluation Variables
+discharge,CAUSE1_W231,1.4506475508251517,44,Injury Variables
+discharge,CAUSE1_W550,1.4464641635772912,45,Injury Variables
+discharge,hospcode_173,1.3703038495232547,46,Hospital Info
+discharge,CAUSE1_W009,1.3521014481062414,47,Injury Variables
+discharge,hospcode_153,1.3334879206122847,48,Hospital Info
+discharge,hospcode_88,1.3185655802321519,49,Hospital Info
+discharge,hospcode_20,-1.3122167090004708,50,Hospital Info
+discharge,hospcode_181,1.2755443779698208,51,Hospital Info
+discharge,CAUSE1_V496,1.2717918819923681,52,Injury Variables
+discharge,hospcode_172,-1.267918584023345,53,Hospital Info
+discharge,hospcode_93,1.2485463796513387,54,Hospital Info
+discharge,hospcode_3,1.235890987252246,55,Hospital Info
+discharge,hospcode_85,-1.2288837225922669,56,Hospital Info
+discharge,hospcode_115,-1.207855775978872,57,Hospital Info
+discharge,hospcode_188,1.1887348972542524,58,Hospital Info
+discharge,CAUSE2_Y93K,1.1746370194285631,59,Injury Variables
+discharge,CAUSE1_W293,1.161501485929843,60,Injury Variables
+discharge,hospcode_34,1.1585122208756489,61,Hospital Info
+discharge,hospcode_30,1.1433632732313215,62,Hospital Info
+discharge,hospcode_136,1.1307520565463998,63,Hospital Info
+discharge,hospcode_131,-1.1273001298591774,64,Hospital Info
+discharge,hospcode_97,1.1256549327823118,65,Hospital Info
+discharge,B349_no,1.0905104164293111,66,Diagnosis and Med Provider Evaluation Variables
+discharge,hospcode_1,-1.0575433058079906,67,Hospital Info
+discharge,hospcode_144,1.0403829543690546,68,Hospital Info
+discharge,hospcode_171,-0.9977391138932117,69,Hospital Info
+discharge,CAUSE1_W450,0.9972126803757213,70,Injury Variables
+discharge,J111_no,0.9773472300453155,71,Diagnosis and Med Provider Evaluation Variables
+discharge,hospcode_83,0.9709974269847057,72,Hospital Info
+discharge,hospcode_187,-0.9601337668037826,73,Hospital Info
+discharge,hospcode_158,-0.9478001048147762,74,Hospital Info
+discharge,CAUSE1_V426,0.9446306588032759,75,Injury Variables
+discharge,CAUSE1_W51X,0.8978006118201373,76,Injury Variables
+discharge,hospcode_170,-0.8862873958452353,77,Hospital Info
+discharge,CAUSE1_W500,0.8759128186515138,78,Injury Variables
+discharge,hospcode_82,-0.8612630840829372,79,Hospital Info
+discharge,CAUSE1_X838,-0.8545454799740598,80,Injury Variables
+discharge,CAUSE2_Y921,0.8521079572085948,81,Injury Variables
+discharge,K590_no,0.8404847844828676,82,Diagnosis and Med Provider Evaluation Variables
+discharge,hospcode_10,0.8286670890125968,83,Hospital Info
+discharge,hospcode_98,-0.8189590848064624,84,Hospital Info
+discharge,S060_yes,0.8105514623872377,85,Diagnosis and Med Provider Evaluation Variables
+discharge,CAUSE2_Y93E,-0.7910948950472718,86,Injury Variables
+discharge,hospcode_17,-0.786457327059732,87,Hospital Info
+discharge,hospcode_60,0.7838472346826948,88,Hospital Info
+discharge,cc_Eye_dz,0.7526714218797771,89,Chief Complaint Variables
+discharge,hospcode_92,-0.7284205940840025,90,Hospital Info
+discharge,SKINADH,0.6973311213783854,91,Procedure Variables
+discharge,CAUSE2_Y938,-0.695301092465877,92,Injury Variables
+discharge,hospcode_11,-0.6903376185187718,93,Hospital Info
+discharge,cc_Infectious_dz,0.6868783076803642,94,Chief Complaint Variables
+discharge,hospcode_107,0.6801701615149515,95,Hospital Info
+discharge,CAUSE1_W868,0.6793269813612394,96,Injury Variables
+discharge,hospcode_163,-0.6694335549367728,97,Hospital Info
+discharge,`RACEUN_Native Hawaiian/Oth Pac Isl Only`,0.6573797847024871,98,Other
+discharge,cc_Endocrine_metabolic,0.6380258750960176,99,Chief Complaint Variables
+discharge,hospcode_179,-0.6318149160541351,100,Hospital Info
+discharge,CENTLINE,-0.6253861214453225,101,Procedure Variables
+discharge,(Intercept),-0.6216998474537818,102,Other
+discharge,hospcode_43,0.6136204855868578,103,Hospital Info
+discharge,cc_Digestive_dz,-0.6049281451500844,104,Chief Complaint Variables
+discharge,R418_no,0.5993869551666611,105,Diagnosis and Med Provider Evaluation Variables
+discharge,PAYTYPER_Self_pay,0.5873989168939227,106,Patient Socioeconomic Demographic Variables
+discharge,cc_Therapy_specific,0.5864362104579344,107,Chief Complaint Variables
+discharge,NEBUTHER,-0.5672534602977577,108,Procedure Variables
+discharge,hospcode_109,0.5605815572786753,109,Hospital Info
+discharge,hospcode_132,-0.5446443342933108,110,Hospital Info
+discharge,cc_Procedure_complication,-0.5305159634744109,111,Chief Complaint Variables
+discharge,CAUSE3_Y990,-0.5179482054559079,112,Injury Variables
+discharge,hospcode_148,0.5161085370883383,113,Hospital Info
+discharge,hospcode_140,0.5103989327672961,114,Hospital Info
+discharge,F29_no,-0.5087319142938355,115,Diagnosis and Med Provider Evaluation Variables
+discharge,hospcode_4,-0.5075560541347638,116,Hospital Info
+discharge,CAD,-0.504750600866641,117,Chronic Disease Variables
+discharge,CAUSE1_V180,0.5038484094415795,118,Injury Variables
+discharge,hospcode_52,0.48773093177212606,119,Hospital Info
+discharge,hospcode_62,-0.48398040095877526,120,Hospital Info
+discharge,hospcode_123,-0.4729505901900266,121,Hospital Info
+discharge,CAUSE1_V584,0.4658675650828875,122,Injury Variables
+discharge,`RACEUN_More than one race reported`,0.46187299851043184,123,Other
+discharge,Z038_no,0.4555768077160859,124,Diagnosis and Med Provider Evaluation Variables
+discharge,hospcode_101,0.44978489353751594,125,Hospital Info
+discharge,INTENT15_Unintentional,0.4495026038172568,126,Injury Variables
+discharge,hospcode_155,-0.4462021941330345,127,Hospital Info
+discharge,emred_unk,-0.44259661938551437,128,Hospital ED Info Variables
+discharge,I269_no,-0.43981028577774844,129,Diagnosis and Med Provider Evaluation Variables
+discharge,hospcode_185,0.43576266774797384,130,Hospital Info
+discharge,IMMEDR_Nonurgent,0.42922523061469303,131,Info Collected at Triage
+discharge,U071_yes,0.4245346758577355,132,Diagnosis and Med Provider Evaluation Variables
+discharge,CAUSE1_W540,-0.423789308468055,133,Injury Variables
+discharge,hospcode_9,-0.40931773125233156,134,Hospital Info
+discharge,hospcode_169,0.39789765799903276,135,Hospital Info
+discharge,CAUSE1_W228,0.3969548935066927,136,Injury Variables
+discharge,L089_no,0.3839873439130381,137,Diagnosis and Med Provider Evaluation Variables
+discharge,CAUSE2_Y074,-0.3693470618677853,138,Injury Variables
+discharge,IMMEDR_Missing,-0.36880635288227237,139,Info Collected at Triage
+discharge,CAUSE1_V475,-0.3615353945858841,140,Injury Variables
+discharge,catriage,0.35830419331587765,141,Hospital ED Info Variables
+discharge,hospcode_105,-0.3539070097432473,142,Hospital Info
+discharge,CAUSE3_Y924,0.35256043831947464,143,Injury Variables
+discharge,cc_Mental_dz,-0.3403402505674195,144,Chief Complaint Variables
+discharge,hospcode_182,-0.3360454079472771,145,Hospital Info
+discharge,cc_Dx_tests,0.31441748889382076,146,Chief Complaint Variables
+discharge,IMMEDR_Semi_urgent,0.3143303461509932,147,Info Collected at Triage
+discharge,hospcode_159,0.3114335880910434,148,Hospital Info
+discharge,cc_Sx_cardio_lymph,-0.2981599286239065,149,Chief Complaint Variables
+discharge,edptor,0.2944844783264203,150,Hospital ED Info Variables
+discharge,K859_no,-0.29060401435635014,151,Diagnosis and Med Provider Evaluation Variables
+discharge,hospcode_119,-0.2825281214900787,152,Hospital Info
+discharge,CANCER,-0.27521348167505477,153,Chronic Disease Variables
+discharge,cc_Uncodable,-0.2750822778523068,154,Chief Complaint Variables
+discharge,hospcode_147,-0.26679153074595086,155,Hospital Info
+discharge,cc_Social_counseling,0.2638175054211563,156,Chief Complaint Variables
+discharge,I509_no,-0.255818050463361,157,Diagnosis and Med Provider Evaluation Variables
+discharge,hospcode_42,0.2550846415949469,158,Hospital Info
+discharge,VMONTH_September,-0.25198517838176404,159,Info Collected at Triage
+discharge,cc_Sx_genitourinary,-0.24959767902987448,160,Chief Complaint Variables
+discharge,CAUSE3_Y930,0.24349231872222263,161,Injury Variables
+discharge,CAUSE1_V449,0.23606593066003315,162,Injury Variables
+discharge,bedczar,-0.23409436167428674,163,Hospital ED Info Variables
+discharge,CAUSE3_Y070,-0.23375825902918412,164,Injury Variables
+discharge,hospcode_70,-0.2273045515663731,165,Hospital Info
+discharge,hospcode_142,0.22719886843529422,166,Hospital Info
+discharge,hospcode_118,-0.2248840305598438,167,Hospital Info
+discharge,cc_Sx_eyes_ears,0.22485380063342983,168,Chief Complaint Variables
+discharge,CEBVD,-0.22168097898195713,169,Chronic Disease Variables
+discharge,ESRD,-0.21799576732271667,170,Chronic Disease Variables
+discharge,hospcode_59,-0.20694054227613468,171,Hospital Info
+discharge,hospcode_78,-0.20223552206469173,172,Hospital Info
+discharge,CAUSE1_W06X,0.19321481432362553,173,Injury Variables
+discharge,seen72,-0.19019510826417288,174,Other
+discharge,`AGER_75 years and over`,-0.18797953391409358,175,Other
+discharge,hospcode_99,0.1867517149717945,176,Hospital Info
+discharge,fasttrak,-0.17848686566589178,177,Hospital ED Info Variables
+discharge,hospcode_160,0.17777093399737154,178,Hospital Info
+discharge,VMONTH_February,0.1708649850365732,179,Info Collected at Triage
+discharge,hospcode_44,-0.16841804568045743,180,Hospital Info
+discharge,hospcode_75,0.16828785844668492,181,Hospital Info
+discharge,cc_Test_results,-0.16675712420503308,182,Chief Complaint Variables
+discharge,`RACEUN_White Only`,-0.16275482382982304,183,Other
+discharge,cc_Sx_psych,-0.16248997766583342,184,Chief Complaint Variables
+discharge,hospcode_129,0.15902781974266125,185,Hospital Info
+discharge,divhr_99,-0.1570541667434428,186,Hospital ED Info Variables
+discharge,CAUSE1_X500,-0.156989902403255,187,Injury Variables
+discharge,boardhos,-0.14665666067555286,188,Hospital ED Info Variables
+discharge,CAUSE2_Y936,-0.14478207261214718,189,Injury Variables
+discharge,VDAYR_Thursday,-0.14173429113740632,190,Info Collected at Triage
+discharge,CHF,-0.13191917580260032,191,Chronic Disease Variables
+discharge,ARREMS,-0.12127296671031912,192,Procedure Variables
+discharge,VDAYR_Saturday,0.11323465467267568,193,Info Collected at Triage
+discharge,VMONTH_December,0.11159021389666082,194,Info Collected at Triage
+discharge,VMONTH_March,0.11103825159787396,195,Info Collected at Triage
+discharge,hospcode_124,-0.11026330134337854,196,Hospital Info
+discharge,CAUSE1_V494,0.1079750794724464,197,Injury Variables
+discharge,hospcode_100,-0.10360728892581393,198,Hospital Info
+discharge,`AGER_65_74 years`,-0.10171574669163842,199,Other
+discharge,cc_Preventive,0.09731891125692908,200,Chief Complaint Variables
+discharge,`RACEUN_Asian Only`,-0.09452136969765698,201,Other
+discharge,CAUSE2_Y924,-0.08906740158971868,202,Injury Variables
+discharge,hospcode_36,0.08746183796573777,203,Hospital Info
+discharge,COPD,-0.08027038003236252,204,Chronic Disease Variables
+discharge,EDHIV,-0.07320183017621536,205,Chronic Disease Variables
+discharge,hospcode_166,0.07229539051108838,206,Hospital Info
+discharge,CKD,-0.07102181610489268,207,Chronic Disease Variables
+discharge,INCDRAIN,-0.06963230038194211,208,Procedure Variables
+discharge,beddata_instant,-0.06715717310999485,209,Hospital ED Info Variables
+discharge,med_binary,0.060943701503275195,210,Other
+discharge,PAYTYPER_Medicare,-0.05790684942682537,211,Patient Socioeconomic Demographic Variables
+discharge,hospcode_133,0.046652230354476035,212,Hospital Info
+discharge,cc_Blood_dz,0.04302731428968592,213,Chief Complaint Variables
+discharge,`RACEUN_American Indian/Alaska Native Only`,0.04231574522261178,214,Other
+discharge,IVFLUIDS,-0.03760712772116572,215,Procedure Variables
+discharge,HTN,-0.032616368800192634,216,Chronic Disease Variables
+discharge,cc_Sx_neuro,0.02695285735177378,217,Chief Complaint Variables
+discharge,NOCHRON,0.02689098730146172,218,Chronic Disease Variables
+discharge,cc_Sx_skin_nails_hair,0.022942470845881302,219,Chief Complaint Variables
+discharge,cc_sum,-0.01883278695462624,220,Chief Complaint Variables
+discharge,hospcode_68,-0.018121502093860497,221,Hospital Info
+discharge,TEMPF,0.016490839917847427,222,Initial Vitals Variables
+discharge,cc_Exam_general,-0.014936227668629634,223,Chief Complaint Variables
+discharge,`AGER_15_24 years`,0.01266786290682939,224,Other
+discharge,n_med_er,-0.011822721498524296,225,Other
+discharge,PAYTYPER_Missing,0.0082767531742922,226,Patient Socioeconomic Demographic Variables
+discharge,PULSE,-0.005807778592424816,227,Initial Vitals Variables
+discharge,OSA,0.005190524172809989,228,Chronic Disease Variables
+discharge,DEPRN,-0.00483929072951616,229,Chronic Disease Variables
+discharge,CAUSE3_Y935,0.0017903578431918842,230,Injury Variables
+discharge,VDAYR_Wednesday,-6.764664514864e-4,231,Info Collected at Triage
+discharge,LOV,-2.526678626055641e-4,232,Hospital Usage Variables
+discharge,T424_yes,7.170711669465951e-14,233,Diagnosis and Med Provider Evaluation Variables
+discharge,hhsmue_na,-3.1300576759269607e-15,234,Hospital ED Info Variables
+left,CAUSE3_Y849,6.610687245459769,1,Injury Variables
+left,CAUSE2_W500,3.577928341199701,2,Injury Variables
+left,CAUSE1_W320,3.4424535511092844,3,Injury Variables
+left,hospcode_95,2.7177362941080876,4,Hospital Info
+left,CAUSE3_Y922,2.6967187376190958,5,Injury Variables
+left,CAUSE1_W541,2.402184382112474,6,Injury Variables
+left,hospcode_159,2.3664326444435537,7,Hospital Info
+left,CAUSE1_Y280,2.159895365514326,8,Injury Variables
+left,T828_no,1.9315993606057213,9,Diagnosis and Med Provider Evaluation Variables
+left,hospcode_67,1.7106788405811721,10,Hospital Info
+left,`RACEUN_More than one race reported`,-1.705645036481729,11,Other
+left,CAUSE3_Y079,1.6331821675086184,12,Injury Variables
+left,CAUSE2_W278,1.62324514340374,13,Injury Variables
+left,hospcode_46,1.6191488689341347,14,Hospital Info
+left,CAUSE2_W109,1.6090502424497637,15,Injury Variables
+left,med_binary,-1.5538345591616822,16,Other
+left,hospcode_11,1.5119252008796322,17,Hospital Info
+left,hospcode_186,-1.4778239800441475,18,Hospital Info
+left,hospcode_116,1.4697185859913289,19,Hospital Info
+left,hospcode_48,-1.443586347986048,20,Hospital Info
+left,CAUSE1_Y00X,1.4313522375979095,21,Injury Variables
+left,T189_no,-1.3371147208209817,22,Diagnosis and Med Provider Evaluation Variables
+left,CAUSE1_Y998,1.2847500997673769,23,Injury Variables
+left,hospcode_37,1.2813956326555622,24,Hospital Info
+left,hospcode_23,1.2579807586799117,25,Hospital Info
+left,hospcode_49,1.240521561204304,26,Hospital Info
+left,CAUSE1_V799,1.2189473874016485,27,Injury Variables
+left,CAUSE1_V134,1.2121841738544743,28,Injury Variables
+left,hospcode_188,1.1730652475336405,29,Hospital Info
+left,hospcode_184,-1.1563703049022813,30,Hospital Info
+left,hospcode_182,-1.1342376685410183,31,Hospital Info
+left,CAUSE2_Y990,-1.1005826169034607,32,Injury Variables
+left,`IMMEDR_Visit occurred in ESA that does not conduct nursing triage`,-1.033860149406095,33,Other
+left,CAUSE1_Y249,1.0015607238601676,34,Injury Variables
+left,CAUSE1_W178,0.9941979861898317,35,Injury Variables
+left,hospcode_96,0.9847042500622624,36,Hospital Info
+left,hospcode_60,-0.9465558330518659,37,Hospital Info
+left,hospcode_29,0.9380110766867844,38,Hospital Info
+left,hospcode_110,0.9259909905556135,39,Hospital Info
+left,hospcode_112,-0.9132549059717538,40,Hospital Info
+left,`INJURY_ENC_Both initial and subsequent encounter codes present`,0.9083503653714334,41,Other
+left,hospcode_50,0.89448888258253,42,Hospital Info
+left,cc_Social_counseling,-0.8895230825776629,43,Chief Complaint Variables
+left,hospcode_128,0.8796551970439476,44,Hospital Info
+left,CAUSE2_Y933,-0.8786360143478662,45,Injury Variables
+left,hospcode_180,-0.8663404463670443,46,Hospital Info
+left,hospcode_119,0.8574182839768065,47,Hospital Info
+left,hospcode_16,0.8562247055269544,48,Hospital Info
+left,hospcode_53,0.8528590121029255,49,Hospital Info
+left,IMMEDR_Immediate,-0.8442606988440914,50,Info Collected at Triage
+left,CAUSE1_Y09_,0.842799644999367,51,Injury Variables
+left,G439_no,0.8412628119649456,52,Diagnosis and Med Provider Evaluation Variables
+left,obsphysun_yes,0.8400740996810092,53,Hospital ED Info Variables
+left,cc_Administrative,-0.8272650605759961,54,Chief Complaint Variables
+left,hospcode_59,0.824636460322469,55,Hospital Info
+left,`AGER_Under 15 years`,-0.7947137128900937,56,Other
+left,ALZHD,-0.7865375052550956,57,Chronic Disease Variables
+left,Z202_no,0.7716930882742984,58,Diagnosis and Med Provider Evaluation Variables
+left,CAUSE2_Y924,-0.7305799028836768,59,Injury Variables
+left,hospcode_44,-0.7136613588188014,60,Hospital Info
+left,hospcode_17,0.68696107249233,61,Hospital Info
+left,hospcode_21,0.670500386374293,62,Hospital Info
+left,U071_yes,-0.668428624831222,63,Diagnosis and Med Provider Evaluation Variables
+left,hospcode_165,0.6594954595028033,64,Hospital Info
+left,cc_Progress_visit,0.6555467652603211,65,Chief Complaint Variables
+left,cc_Uncodable,0.6395145420528356,66,Chief Complaint Variables
+left,CAUSE2_Y075,-0.6363603770965593,67,Injury Variables
+left,CAUSE2_W220,0.6327853146537852,68,Injury Variables
+left,K859_no,0.6305173182479266,69,Diagnosis and Med Provider Evaluation Variables
+left,hospcode_1,-0.6294926804449863,70,Hospital Info
+left,hospcode_134,-0.622629577094261,71,Hospital Info
+left,hospcode_133,-0.5665493707416371,72,Hospital Info
+left,hospcode_94,0.555690827793413,73,Hospital Info
+left,hospcode_38,-0.533110098843526,74,Hospital Info
+left,R202_no,-0.5313900374235524,75,Diagnosis and Med Provider Evaluation Variables
+left,K590_no,-0.5077512607754215,76,Diagnosis and Med Provider Evaluation Variables
+left,hospcode_108,0.4903868995839599,77,Hospital Info
+left,SUBSTAB,0.4882963300791488,78,Chronic Disease Variables
+left,`PAYTYPER_No charge/Charity`,0.48090143115422407,79,Other
+left,hospcode_85,0.47094124218559286,80,Hospital Info
+left,PAYTYPER_Self_pay,0.46345055738238944,81,Patient Socioeconomic Demographic Variables
+left,hospcode_77,0.4405609782711459,82,Hospital Info
+left,hospcode_129,-0.4330552592290251,83,Hospital Info
+left,K579_no,-0.4300644822942557,84,Diagnosis and Med Provider Evaluation Variables
+left,U071_no,-0.4246791557048798,85,Diagnosis and Med Provider Evaluation Variables
+left,CAUSE1_Y048,0.41837116768081345,86,Injury Variables
+left,hospcode_68,0.4056907783069376,87,Hospital Info
+left,CAUSE1_W868,-0.4019590394448221,88,Injury Variables
+left,CAUSE1_W228,-0.3943817766011265,89,Injury Variables
+left,CAUSE1_W208,-0.39170457706066747,90,Injury Variables
+left,T509_no,-0.39046377813577954,91,Diagnosis and Med Provider Evaluation Variables
+left,hospcode_65,-0.38933631790043594,92,Hospital Info
+left,hospcode_109,-0.3700051608103161,93,Hospital Info
+left,hospcode_155,0.3625935484860907,94,Hospital Info
+left,`PAYTYPER_All sources of payment are blank`,0.35147655145189355,95,Other
+left,hospcode_132,0.3425733254621585,96,Hospital Info
+left,PAYTYPER_Missing,0.3408608938894533,97,Patient Socioeconomic Demographic Variables
+left,PROC,-0.33427553453848907,98,Procedure Variables
+left,hospcode_185,-0.3313428886853497,99,Hospital Info
+left,edinfo_unk,0.3252169777424643,100,Hospital ED Info Variables
+left,CAUSE1_W109,-0.3123809210538976,101,Injury Variables
+left,cc_Therapy_specific,-0.30774190223830994,102,Chief Complaint Variables
+left,cc_Ear_dz,0.30073962968636375,103,Chief Complaint Variables
+left,catriage,0.2976374223558288,104,Hospital ED Info Variables
+left,hospcode_79,-0.2896553875421518,105,Hospital Info
+left,hospcode_27,-0.28713887247102976,106,Hospital Info
+left,cc_Poisoning,0.27921863149903076,107,Chief Complaint Variables
+left,`AGER_75 years and over`,-0.261797441098032,108,Other
+left,cc_Skin_dz,-0.25201374350178196,109,Chief Complaint Variables
+left,L031_no,-0.24519468466538977,110,Diagnosis and Med Provider Evaluation Variables
+left,J111_no,-0.24498626973879792,111,Diagnosis and Med Provider Evaluation Variables
+left,`ETHIM_Hispanic or Latino`,-0.2445133455735338,112,Other
+left,obshosp_no,-0.2435691457583071,113,Hospital ED Info Variables
+left,hospcode_20,0.2379570654590876,114,Hospital Info
+left,CAUSE1_V435,0.2336581618712161,115,Injury Variables
+left,`RACERETH_Non_Hispanic Black`,0.22764581833973246,116,Other
+left,`AGER_45_64 years`,0.22450988511647818,117,Other
+left,hospcode_19,-0.219949893051034,118,Hospital Info
+left,region_south,0.21798312669742778,119,Hospital ED Info Variables
+left,cc_Congenital,-0.21140008705124003,120,Chief Complaint Variables
+left,hospcode_148,0.2104637005325963,121,Hospital Info
+left,PAYTYPER_Other,-0.20716356134533767,122,Patient Socioeconomic Demographic Variables
+left,`AGER_25_44 years`,0.19203378816100283,123,Other
+left,`RACEUN_Asian Only`,-0.18346719329066627,124,Other
+left,(Intercept),0.1806850216937353,125,Other
+left,CAUSE1_W050,-0.18042651612130514,126,Injury Variables
+left,hospcode_66,-0.16901687969291906,127,Hospital Info
+left,wireless,0.1686235585555883,128,Hospital ED Info Variables
+left,bedreg,0.1684843591684639,129,Hospital ED Info Variables
+left,CKD,-0.16838261978077634,130,Chronic Disease Variables
+left,`PAYTYPER_Private insurance`,-0.15805971202652994,131,Other
+left,hospcode_43,-0.15024238781569021,132,Hospital Info
+left,seen72,0.13787935290711806,133,Other
+left,hospcode_25,0.1372965886557289,134,Hospital Info
+left,cc_Sx_eyes_ears,0.13726510031907863,135,Chief Complaint Variables
+left,hospcode_127,0.13551099525713664,136,Hospital Info
+left,cc_Sx_respiratory,0.12845995623062703,137,Chief Complaint Variables
+left,DEPRN,-0.1264840275806987,138,Chronic Disease Variables
+left,hospcode_104,-0.12300954528290545,139,Hospital Info
+left,hospcode_161,0.12149963093020724,140,Hospital Info
+left,board,0.10914461117413189,141,Hospital ED Info Variables
+left,hospcode_123,0.10531586152536102,142,Hospital Info
+left,hospcode_14,-0.10284792882062942,143,Hospital Info
+left,CAUSE1_V475,0.10121963072450375,144,Injury Variables
+left,edinfo_no,-0.1001484424200819,145,Hospital ED Info Variables
+left,cc_Exam_general,-0.08448429649960847,146,Chief Complaint Variables
+left,hospcode_166,0.0835525010576037,147,Hospital Info
+left,hospcode_122,0.08338880474339282,148,Hospital Info
+left,Z208_no,-0.08164268430121077,149,Diagnosis and Med Provider Evaluation Variables
+left,VMONTH_September,0.08042752314607955,150,Info Collected at Triage
+left,INJURY_ENC_No,0.076054784906167,151,Injury Variables
+left,CAUSE1_V494,0.07430932354629352,152,Injury Variables
+left,VDAYR_Saturday,-0.07427821653951004,153,Info Collected at Triage
+left,hospcode_174,-0.06936789784990471,154,Hospital Info
+left,SEX_Female,0.06226305797559702,155,Patient Socioeconomic Demographic Variables
+left,VDAYR_Sunday,0.0612098359881431,156,Info Collected at Triage
+left,hhsmue_unk,-0.05746538332886944,157,Hospital ED Info Variables
+left,ETOHAB,0.049015215141791184,158,Chronic Disease Variables
+left,hospcode_87,-0.039107263142653635,159,Hospital Info
+left,CAD,0.027621166310630746,160,Chronic Disease Variables
+left,incphys,0.023684661093281063,161,Hospital ED Info Variables
+left,VDAYR_Friday,-0.022313764817999276,162,Info Collected at Triage
+left,regdiv,0.022000571416733932,163,Hospital ED Info Variables
+left,hospcode_30,-0.017985784746470012,164,Hospital Info
+left,region_west,-0.017808212792085738,165,Hospital ED Info Variables
+left,hospcode_88,-0.017060245750934355,166,Hospital Info
+left,cc_Procedure_complication,0.015527859706484726,167,Chief Complaint Variables
+left,VDAYR_Monday,0.013984689161783448,168,Info Collected at Triage
+left,CAUSE2__9,0.010006876007133502,169,Injury Variables
+left,`ETHIM_Not Hispanic or Latino`,0.005341366725556405,170,Other
+left,RACERETH_Hispanic,-0.004994880470634814,171,Patient Socioeconomic Demographic Variables
+left,HTN,-0.004858175986980777,172,Chronic Disease Variables
+left,BPDIAS,0.0045297383294808195,173,Initial Vitals Variables
+left,hospcode_173,-0.004007058397580947,174,Hospital Info
+left,obsphysed_yes,-8.401059945655824e-4,175,Hospital ED Info Variables
+left,SEX_Male,-3.9311972987437057e-4,176,Patient Socioeconomic Demographic Variables
+returned,hospcode_166,-4.59549387085973,1,Hospital Info
+returned,CAUSE1_X088,3.761254173147249,2,Injury Variables
+returned,hospcode_126,3.6896678055728223,3,Hospital Info
+returned,hospcode_74,3.501865853194801,4,Hospital Info
+returned,hospcode_145,3.412360347166666,5,Hospital Info
+returned,CAUSE1_W555,3.381319329822334,6,Injury Variables
+returned,hospcode_35,3.212846527570679,7,Hospital Info
+returned,hospcode_57,3.060140657007227,8,Hospital Info
+returned,hospcode_4,3.0582246292538295,9,Hospital Info
+returned,hospcode_148,-3.0024274111600295,10,Hospital Info
+returned,hospcode_128,2.9613533495215636,11,Hospital Info
+returned,hospcode_108,2.865054047741933,12,Hospital Info
+returned,hospcode_1,2.8441787170568156,13,Hospital Info
+returned,hospcode_130,2.8059749716536815,14,Hospital Info
+returned,hospcode_25,2.756092418570932,15,Hospital Info
+returned,hospcode_152,-2.697411836157124,16,Hospital Info
+returned,cc_Eye_dz,-2.6747061493633035,17,Chief Complaint Variables
+returned,hospcode_5,2.657742763844645,18,Hospital Info
+returned,CAUSE2_W501,2.6573843884208177,19,Injury Variables
+returned,hospcode_173,-2.6415201550739704,20,Hospital Info
+returned,hospcode_155,-2.562458059122283,21,Hospital Info
+returned,hospcode_58,2.4877739130104914,22,Hospital Info
+returned,hospcode_188,-2.468520967010722,23,Hospital Info
+returned,T780_yes,2.4543542647517977,24,Diagnosis and Med Provider Evaluation Variables
+returned,hospcode_105,2.447900546857237,25,Hospital Info
+returned,K37_no,-2.353147080383749,26,Diagnosis and Med Provider Evaluation Variables
+returned,CAUSE1_V031,2.3310807402965983,27,Injury Variables
+returned,hospcode_175,-2.311835064488522,28,Hospital Info
+returned,CAUSE1_W558,2.2030796225654066,29,Injury Variables
+returned,region_west,2.1976827881986942,30,Hospital ED Info Variables
+returned,CAUSE1_W550,-2.1696877430599293,31,Injury Variables
+returned,CAUSE3_Y938,2.1591069838342265,32,Injury Variables
+returned,hospcode_70,2.156427050047792,33,Hospital Info
+returned,hospcode_174,2.1535551794198087,34,Hospital Info
+returned,hospcode_60,2.1404323355788177,35,Hospital Info
+returned,hospcode_116,2.139091646251467,36,Hospital Info
+returned,hospcode_131,2.136136371035992,37,Hospital Info
+returned,hospcode_19,2.1132727866549366,38,Hospital Info
+returned,hospcode_163,2.0969361190497215,39,Hospital Info
+returned,hospcode_132,2.0925820594573477,40,Hospital Info
+returned,CAUSE2_Y070,-1.9920693100709608,41,Injury Variables
+returned,hospcode_167,1.9762890111529057,42,Hospital Info
+returned,hospcode_186,-1.9706750932069332,43,Hospital Info
+returned,CAUSE1_W548,1.9419674151778468,44,Injury Variables
+returned,CAUSE2_W548,1.9320002572513275,45,Injury Variables
+returned,CAUSE2_Y933,1.8528057281627694,46,Injury Variables
+returned,hospcode_162,1.8443009160122334,47,Hospital Info
+returned,hospcode_82,1.8325042990133904,48,Hospital Info
+returned,CAUSE1_W11X,1.7968426049451882,49,Injury Variables
+returned,hospcode_78,1.761985631723122,50,Hospital Info
+returned,hospcode_117,1.742795226631575,51,Hospital Info
+returned,CAUSE1_V030,1.694708048496358,52,Injury Variables
+returned,hospcode_183,-1.6415447028245516,53,Hospital Info
+returned,hospcode_161,-1.6092163045486123,54,Hospital Info
+returned,hospcode_44,1.6060460510304273,55,Hospital Info
+returned,`INJURY_ENC_Sequela encounter for injury`,-1.60471622589861,56,Other
+returned,INCDRAIN,1.5062605623931575,57,Procedure Variables
+returned,hospcode_101,-1.4964706616640937,58,Hospital Info
+returned,CAUSE2_Y93K,-1.4828750293882695,59,Injury Variables
+returned,hospcode_36,-1.4774153117662068,60,Hospital Info
+returned,CAUSE1_Y848,1.476915485294551,61,Injury Variables
+returned,hospcode_98,1.4704997025072972,62,Hospital Info
+returned,K859_no,-1.4320203181292335,63,Diagnosis and Med Provider Evaluation Variables
+returned,hospcode_149,-1.412056166870206,64,Hospital Info
+returned,hospcode_90,-1.3868277903729496,65,Hospital Info
+returned,O758_yes,1.3722662219920625,66,Diagnosis and Med Provider Evaluation Variables
+returned,E116_no,-1.3662384205886955,67,Diagnosis and Med Provider Evaluation Variables
+returned,cc_Congenital,-1.3562052785763166,68,Chief Complaint Variables
+returned,CAUSE1_Y938,1.3423577613425333,69,Injury Variables
+returned,hospcode_168,-1.3394475559682204,70,Hospital Info
+returned,hospcode_118,1.3036349499462676,71,Hospital Info
+returned,H811_no,1.2877059772919226,72,Diagnosis and Med Provider Evaluation Variables
+returned,hospcode_93,1.2656962684794948,73,Hospital Info
+returned,hospcode_113,-1.2566303911125465,74,Hospital Info
+returned,CAUSE3_Y070,1.2293359279139606,75,Injury Variables
+returned,B349_no,1.2095662695329716,76,Diagnosis and Med Provider Evaluation Variables
+returned,S060_no,1.1941107681556242,77,Diagnosis and Med Provider Evaluation Variables
+returned,hospcode_165,-1.1474572532290561,78,Hospital Info
+returned,CAUSE1_V535,1.0796228764085016,79,Injury Variables
+returned,SUTURE,1.0452281648481792,80,Procedure Variables
+returned,hospcode_140,-1.0444419949816102,81,Hospital Info
+returned,R569_yes,1.03472861355411,82,Diagnosis and Med Provider Evaluation Variables
+returned,CAUSE1_W541,-1.029823737314492,83,Injury Variables
+returned,hospcode_104,1.0276508562843056,84,Hospital Info
+returned,Z203_no,1.0245807888417044,85,Diagnosis and Med Provider Evaluation Variables
+returned,cc_Administrative,-1.0152083242323229,86,Chief Complaint Variables
+returned,hospcode_66,0.9982191871745493,87,Hospital Info
+returned,hospcode_51,-0.9963984525295477,88,Hospital Info
+returned,CAUSE2_W51X,0.9862420498242572,89,Injury Variables
+returned,CAUSE1_W293,-0.9744775149362698,90,Injury Variables
+returned,hospcode_129,0.9678178412158227,91,Hospital Info
+returned,hospcode_157,-0.9601735198690057,92,Hospital Info
+returned,hospcode_37,0.9355200572772131,93,Hospital Info
+returned,CAUSE3_Y921,0.9093854157280361,94,Injury Variables
+returned,CAUSE2_Y074,0.9001485730723816,95,Injury Variables
+returned,T404_no,-0.8956469689103375,96,Diagnosis and Med Provider Evaluation Variables
+returned,hospcode_150,-0.8840524407839339,97,Hospital Info
+returned,hospcode_123,0.8813363471214093,98,Hospital Info
+returned,CAUSE1_X31X,0.8805838325823536,99,Injury Variables
+returned,CAUSE2_Y921,-0.8610921544009168,100,Injury Variables
+returned,CAUSE1_Y249,0.8545481730514137,101,Injury Variables
+returned,R202_no,0.8477581285386364,102,Diagnosis and Med Provider Evaluation Variables
+returned,CAUSE1_W57X,0.8334476406699148,103,Injury Variables
+returned,CAUSE1_V495,-0.7949566355337452,104,Injury Variables
+returned,CAUSE1_V475,-0.786650098014627,105,Injury Variables
+returned,hospcode_23,-0.7836535186549424,106,Hospital Info
+returned,hospcode_125,0.7735574340018129,107,Hospital Info
+returned,F121_no,0.7727148790023999,108,Diagnosis and Med Provider Evaluation Variables
+returned,CAUSE1_V294,0.7580059804569037,109,Injury Variables
+returned,hospcode_88,0.7524132885561726,110,Hospital Info
+returned,SKINADH,0.7361214408082181,111,Procedure Variables
+returned,CASTSPLINT,0.716371047571634,112,Procedure Variables
+returned,S560_yes,0.7129106158030292,113,Diagnosis and Med Provider Evaluation Variables
+returned,hospcode_153,0.7119423076732071,114,Hospital Info
+returned,CAUSE3_Y922,-0.7110100764448779,115,Injury Variables
+returned,zonenurs,-0.7077051949661872,116,Hospital ED Info Variables
+returned,hospcode_147,0.6943605885958759,117,Hospital Info
+returned,LUMBAR,-0.6888867956754728,118,Procedure Variables
+returned,hospcode_17,0.6768645642930019,119,Hospital Info
+returned,hospcode_39,0.6745823566172574,120,Hospital Info
+returned,hospcode_178,0.6709698463312543,121,Hospital Info
+returned,CAUSE1_W220,0.6639195757151688,122,Injury Variables
+returned,T407_no,0.6431835786437401,123,Diagnosis and Med Provider Evaluation Variables
+returned,CAUSE3_Y930,-0.63944319902451,124,Injury Variables
+returned,hospcode_172,0.6373362720612282,125,Hospital Info
+returned,obsphysot_no,-0.6239099698022176,126,Hospital ED Info Variables
+returned,CAUSE2_Y075,0.6115156904736558,127,Injury Variables
+returned,hospcode_55,-0.609908021759082,128,Hospital Info
+returned,CAUSE1_W69X,0.6044532445030516,129,Injury Variables
+returned,hospcode_80,-0.5936429134308633,130,Hospital Info
+returned,CAUSE2_W180,0.5782312830602788,131,Injury Variables
+returned,hospcode_107,-0.577325153900663,132,Hospital Info
+returned,hospcode_42,-0.5726763658116673,133,Hospital Info
+returned,T780_no,0.562778937211309,134,Diagnosis and Med Provider Evaluation Variables
+returned,hospcode_103,-0.5622522628865952,135,Hospital Info
+returned,hospcode_109,0.5612071331535706,136,Hospital Info
+returned,CAUSE1_W312,0.5585934259952903,137,Injury Variables
+returned,`RACEUN_Native Hawaiian/Oth Pac Isl Only`,-0.54533871548261,138,Other
+returned,CAUSE2_Y924,0.5393995598698333,139,Injury Variables
+returned,CAUSE1_W540,0.5378314285440159,140,Injury Variables
+returned,hospcode_169,-0.5284006624794384,141,Hospital Info
+returned,hospcode_156,0.4894405443631642,142,Hospital Info
+returned,hospcode_119,-0.4886923949462071,143,Hospital Info
+returned,hospcode_72,-0.46467696041170103,144,Hospital Info
+returned,BPAP,-0.4602298471243597,145,Procedure Variables
+returned,`PAYTYPER_No charge/Charity`,-0.4587383894042704,146,Other
+returned,CAUSE1_W180,0.45868629254356436,147,Injury Variables
+returned,hospcode_179,0.4582294256009849,148,Hospital Info
+returned,hospcode_184,0.4577024655601285,149,Hospital Info
+returned,obsphysed_notmarked,-0.456366278254082,150,Hospital ED Info Variables
+returned,I213_no,-0.4522980818246862,151,Diagnosis and Med Provider Evaluation Variables
+returned,hospcode_164,0.4409874851740992,152,Hospital Info
+returned,obshosp_yes,-0.43453475230937405,153,Hospital ED Info Variables
+returned,CAUSE2__9,-0.4315851626765774,154,Injury Variables
+returned,regdiv,0.42841422317462385,155,Hospital ED Info Variables
+returned,cc_Exam_special,-0.41889770460274184,156,Chief Complaint Variables
+returned,ENDOINT,-0.4105835729468824,157,Procedure Variables
+returned,CAUSE2_Y938,0.3735461564601968,158,Injury Variables
+returned,hospcode_159,-0.37167619683548503,159,Hospital Info
+returned,med_binary,0.3662446188713789,160,Other
+returned,`RACEUN_Black/African American Only`,0.35395467568139954,161,Other
+returned,J980_no,0.34676300398815874,162,Diagnosis and Med Provider Evaluation Variables
+returned,CAD,-0.3451880022847134,163,Chronic Disease Variables
+returned,J459_yes,0.3446006913253631,164,Diagnosis and Med Provider Evaluation Variables
+returned,hhsmue_unk,0.34395665498402944,165,Hospital ED Info Variables
+returned,`RACERETH_Non_Hispanic Other`,-0.34346654195797616,166,Other
+returned,K590_no,0.32458079426225667,167,Diagnosis and Med Provider Evaluation Variables
+returned,OSTPRSIS,-0.3209261505793861,168,Chronic Disease Variables
+returned,R188_no,-0.317752388991118,169,Diagnosis and Med Provider Evaluation Variables
+returned,hospcode_182,0.3172735023354021,170,Hospital Info
+returned,VMONTH_June,0.30002253616723473,171,Info Collected at Triage
+returned,CAUSE1_W07X,-0.2950968333270501,172,Injury Variables
+returned,cc_Nervous_dz,0.2898678806713638,173,Chief Complaint Variables
+returned,CAUSE1_V494,-0.2861622369715403,174,Injury Variables
+returned,CAUSE1_W260,0.2688371142083547,175,Injury Variables
+returned,hospcode_11,-0.26366102307196326,176,Hospital Info
+returned,CAUSE1_X500,0.25713044010516156,177,Injury Variables
+returned,`PAYTYPER_Worker's compensation`,0.2510398764790203,178,Other
+returned,hospcode_87,-0.239822301844963,179,Hospital Info
+returned,hospcode_52,-0.23250311256475237,180,Hospital Info
+returned,N133_no,0.23101601173777436,181,Diagnosis and Med Provider Evaluation Variables
+returned,region_northeast,-0.22978905837433167,182,Hospital ED Info Variables
+returned,CAUSE2_Y040,-0.2266992456838974,183,Injury Variables
+returned,hospcode_138,-0.2241891963671913,184,Hospital Info
+returned,CAUSE2_Y930,0.2169632089101346,185,Injury Variables
+returned,hospcode_143,-0.2115282583150168,186,Hospital Info
+returned,cc_Medications,0.20067047223370488,187,Chief Complaint Variables
+returned,hospcode_181,-0.197055929044055,188,Hospital Info
+returned,CAUSE1_V865,-0.190583154078285,189,Injury Variables
+returned,cc_Periop_care,0.18777828632222346,190,Chief Complaint Variables
+returned,hlisted,0.1856626056070474,191,Hospital ED Info Variables
+returned,CAUSE1_W60X,0.18502792908310597,192,Injury Variables
+returned,hospcode_3,0.1820191452003729,193,Hospital Info
+returned,CAUSE2_Y990,0.17970796619991689,194,Injury Variables
+returned,hospcode_41,-0.17008723433932962,195,Hospital Info
+returned,hospcode_10,-0.16948426248919948,196,Hospital Info
+returned,n_med_dis,0.16674642582018745,197,Other
+returned,CAUSE1_W182,0.16503173339029165,198,Injury Variables
+returned,cc_Skin_dz,0.15538930774646675,199,Chief Complaint Variables
+returned,PAYTYPER_Missing,-0.14656559302119748,200,Patient Socioeconomic Demographic Variables
+returned,IMMEDR_Emergent,-0.14315296654412155,201,Info Collected at Triage
+returned,CAUSE2_Y00X,0.13650973380661283,202,Injury Variables
+returned,hospcode_158,0.1357571413940147,203,Hospital Info
+returned,hospcode_99,-0.13135635720868327,204,Hospital Info
+returned,VMONTH_August,0.13066888730095985,205,Info Collected at Triage
+returned,CAUSE2_Y935,-0.13042817098457812,206,Injury Variables
+returned,CAUSE2_W010,0.13019021773435055,207,Injury Variables
+returned,cc_Perinatal,0.12319730924216261,208,Chief Complaint Variables
+returned,OBESITY,-0.12289356711877172,209,Chronic Disease Variables
+returned,cc_Sx_digestive,0.11922223718691098,210,Chief Complaint Variables
+returned,VDAYR_Saturday,-0.09872663078821026,211,Info Collected at Triage
+returned,hospcode_146,0.09196156104659962,212,Hospital Info
+returned,DIABTYP2,-0.08567665777653138,213,Chronic Disease Variables
+returned,Z208_no,0.08386321716072788,214,Diagnosis and Med Provider Evaluation Variables
+returned,CEBVD,-0.08314507159990356,215,Chronic Disease Variables
+returned,hospcode_73,-0.07988498002520172,216,Hospital Info
+returned,ARREMS,-0.07877646374528316,217,Procedure Variables
+returned,hospcode_33,-0.07205028611618823,218,Hospital Info
+returned,HYPLIPID,-0.07057536645216192,219,Chronic Disease Variables
+returned,VDAYR_Sunday,-0.06693850213735972,220,Info Collected at Triage
+returned,ASTHMA,0.06448022223760938,221,Chronic Disease Variables
+returned,cc_Test_results,-0.05994872044130858,222,Chief Complaint Variables
+returned,hospcode_115,0.05704476304635955,223,Hospital Info
+returned,CHF,-0.055516898301951355,224,Chronic Disease Variables
+returned,hospcode_56,0.05469851863294114,225,Hospital Info
+returned,CAUSE1_W230,0.053980040925637664,226,Injury Variables
+returned,U071_no,0.049532847748774186,227,Diagnosis and Med Provider Evaluation Variables
+returned,catriage,-0.04827094642432089,228,Hospital ED Info Variables
+returned,CAUSE1_W183,-0.046779155520818815,229,Injury Variables
+returned,VDAYR_Monday,-0.04455609011516205,230,Info Collected at Triage
+returned,CAUSE1_W208,0.0437589701503212,231,Injury Variables
+returned,IMMEDR_Missing,-0.04322825445143531,232,Info Collected at Triage
+returned,IVFLUIDS,-0.04305604919292469,233,Procedure Variables
+returned,CAUSE2_Y076,0.041003601524109784,234,Injury Variables
+returned,cc_Injury_cause_status,-0.03585028936463856,235,Chief Complaint Variables
+returned,seen72,-0.03414849316484086,236,Other
+returned,cc_Sx_neuro,0.0289298408459384,237,Chief Complaint Variables
+returned,`PAYTYPER_Private insurance`,0.024731399078402945,238,Other
+returned,cc_sum,0.023893895203043275,239,Chief Complaint Variables
+returned,(Intercept),-0.02345977413201783,240,Other
+returned,hospcode_120,-0.021967998261273207,241,Hospital Info
+returned,DIABTYP0,-0.016186937338474747,242,Chronic Disease Variables
+returned,hospcode_170,0.01603820477166548,243,Hospital Info
+returned,RESPR,-0.012904099601218244,244,Initial Vitals Variables
+returned,INJURY72_No,-0.00860757205516232,245,Injury Variables
+returned,CAUSE3_Y936,0.004810264534453225,246,Injury Variables
+returned,CAUSE2_W228,-0.0016345492344605897,247,Injury Variables
+returned,BPSYS,9.9821978836865e-4,248,Initial Vitals Variables
+returned,BPDIAS,7.025427013841078e-4,249,Initial Vitals Variables
+returned,`INJURY_ENC_Subsequent encounter for injury`,-1.126167424542374e-4,250,Other
+returned,row_id,8.209349635197871e-5,251,Other
+returned,LOV,-6.710767271005257e-5,252,Hospital Usage Variables
+transfer,hospcode_151,3.8838285798679513,1,Hospital Info
+transfer,CAUSE1_W541,3.519219346217468,2,Injury Variables
+transfer,CAUSE1_W160,3.4935777068560254,3,Injury Variables
+transfer,CAUSE1_W04X,3.4474434174349575,4,Injury Variables
+transfer,CAUSE1_W172,3.414222931372989,5,Injury Variables
+transfer,cc_Ear_dz,3.1132819440409687,6,Chief Complaint Variables
+transfer,hospcode_114,3.053711111134259,7,Hospital Info
+transfer,CAUSE1_V282,2.99289831725549,8,Injury Variables
+transfer,CAUSE1_V003,2.974020669183844,9,Injury Variables
+transfer,hospcode_94,2.879654693219461,10,Hospital Info
+transfer,hospcode_102,2.8541937165894113,11,Hospital Info
+transfer,C900_no,2.7455660841446154,12,Diagnosis and Med Provider Evaluation Variables
+transfer,CAUSE1_X789,2.625097780920092,13,Injury Variables
+transfer,CAUSE2_X789,2.6129597760163237,14,Injury Variables
+transfer,K358_no,2.4659782918333857,15,Diagnosis and Med Provider Evaluation Variables
+transfer,CAUSE1_W552,2.391940747435439,16,Injury Variables
+transfer,M008_no,2.388468557456964,17,Diagnosis and Med Provider Evaluation Variables
+transfer,CAUSE2_X781,2.3872280552233165,18,Injury Variables
+transfer,hospcode_49,2.1313221018274855,19,Hospital Info
+transfer,I213_no,2.070812091665326,20,Diagnosis and Med Provider Evaluation Variables
+transfer,hospcode_96,2.0643191858180927,21,Hospital Info
+transfer,hospcode_145,1.9984756232993899,22,Hospital Info
+transfer,K566_no,1.9352369452669145,23,Diagnosis and Med Provider Evaluation Variables
+transfer,hospcode_54,1.9088979088111204,24,Hospital Info
+transfer,CAUSE3_Y070,1.905002391525966,25,Injury Variables
+transfer,(Intercept),1.851306320878441,26,Other
+transfer,hospcode_185,1.791697541186829,27,Hospital Info
+transfer,hospcode_135,1.76652180666736,28,Hospital Info
+transfer,hospcode_29,1.7187118145245732,29,Hospital Info
+transfer,hospcode_95,1.7072056847463515,30,Hospital Info
+transfer,hospcode_168,1.6088652091182032,31,Hospital Info
+transfer,hospcode_73,1.589132067909883,32,Hospital Info
+transfer,hospcode_139,1.5753933558398077,33,Hospital Info
+transfer,hospcode_169,1.5535158597443965,34,Hospital Info
+transfer,hospcode_4,1.5405331808259828,35,Hospital Info
+transfer,hospcode_126,1.538894779263321,36,Hospital Info
+transfer,CAUSE2_X810,1.5188772790403295,37,Injury Variables
+transfer,CAUSE1_W06X,1.5150516893935808,38,Injury Variables
+transfer,hospcode_137,1.5073818739717364,39,Hospital Info
+transfer,F29_no,1.4936673274044558,40,Diagnosis and Med Provider Evaluation Variables
+transfer,hospcode_1,1.4055185670693562,41,Hospital Info
+transfer,hospcode_61,1.4045239045658005,42,Hospital Info
+transfer,cc_Exam_general,1.3979707124762213,43,Chief Complaint Variables
+transfer,hospcode_120,1.3810978957572777,44,Hospital Info
+transfer,hospcode_173,1.3785947404600531,45,Hospital Info
+transfer,R188_no,1.3243852711023179,46,Diagnosis and Med Provider Evaluation Variables
+transfer,hospcode_76,1.2601948539695744,47,Hospital Info
+transfer,hospcode_113,1.225061468178737,48,Hospital Info
+transfer,CAUSE1_W011,1.2029015269128531,49,Injury Variables
+transfer,CAUSE1_W184,1.1943177845863158,50,Injury Variables
+transfer,CAUSE1_X838,1.161950604635185,51,Injury Variables
+transfer,hospcode_99,1.1566558774219036,52,Hospital Info
+transfer,hospcode_86,1.0605308695898592,53,Hospital Info
+transfer,hospcode_52,1.0025444843238644,54,Hospital Info
+transfer,hospcode_180,0.9821994130847499,55,Hospital Info
+transfer,hospcode_75,0.9712297884114066,56,Hospital Info
+transfer,hospcode_26,0.9699224660878274,57,Hospital Info
+transfer,J218_no,0.9622246684783912,58,Diagnosis and Med Provider Evaluation Variables
+transfer,`PAYTYPER_No charge/Charity`,0.9363390180182822,59,Other
+transfer,ALZHD,0.9204629557218208,60,Chronic Disease Variables
+transfer,Z038_no,-0.8953758783738782,61,Diagnosis and Med Provider Evaluation Variables
+transfer,hospcode_48,0.8923380838497417,62,Hospital Info
+transfer,CAUSE1_W228,0.8511485758047,63,Injury Variables
+transfer,cc_Sx_psych,0.7999034958924258,64,Chief Complaint Variables
+transfer,hospcode_78,0.7550332709979911,65,Hospital Info
+transfer,N133_no,-0.7289601854544148,66,Diagnosis and Med Provider Evaluation Variables
+transfer,hospcode_83,0.7085281419496939,67,Hospital Info
+transfer,IMMEDR_Emergent,0.6941669180160175,68,Info Collected at Triage
+transfer,G439_no,-0.6833448526043173,69,Diagnosis and Med Provider Evaluation Variables
+transfer,hospcode_182,0.6778425854325192,70,Hospital Info
+transfer,IMMEDR_Semi_urgent,-0.6680193928130512,71,Info Collected at Triage
+transfer,hospcode_121,0.6672204164276224,72,Hospital Info
+transfer,cc_Med_counseling,0.659435009200041,73,Chief Complaint Variables
+transfer,hospcode_16,-0.6589663830394781,74,Hospital Info
+transfer,ARREMS,0.6532169226614862,75,Procedure Variables
+transfer,CAUSE3_Y920,-0.6462057416604846,76,Injury Variables
+transfer,I639_no,0.6388109742027752,77,Diagnosis and Med Provider Evaluation Variables
+transfer,K37_no,0.6010065582661159,78,Diagnosis and Med Provider Evaluation Variables
+transfer,hospcode_164,0.594633524191249,79,Hospital Info
+transfer,MSA,-0.5281960476379602,80,Hospital ED Info Variables
+transfer,PELVIC,-0.5190506888289614,81,Procedure Variables
+transfer,CAUSE1_W231,0.5053527780680053,82,Injury Variables
+transfer,CAUSE2_Y070,0.48721952844131555,83,Injury Variables
+transfer,CAUSE2_W220,-0.4843059775507639,84,Injury Variables
+transfer,`AGER_75 years and over`,0.4788318055262515,85,Other
+transfer,hospcode_63,0.46754372617472223,86,Hospital Info
+transfer,R569_no,0.44438629071366964,87,Diagnosis and Med Provider Evaluation Variables
+transfer,CAUSE2_W228,0.44055183176046847,88,Injury Variables
+transfer,`RACEUN_American Indian/Alaska Native Only`,0.41981062323507856,89,Other
+transfer,hospcode_17,-0.40532140790325505,90,Hospital Info
+transfer,CAUSE2_W010,0.4020214589970385,91,Injury Variables
+transfer,CKD,0.3964593976732227,92,Chronic Disease Variables
+transfer,cc_Sx_general,-0.3811247528994113,93,Chief Complaint Variables
+transfer,rfid,-0.36982404482570946,94,Hospital ED Info Variables
+transfer,TOTPROC,0.35420900867815985,95,Procedure Variables
+transfer,hospcode_175,0.35150373910143684,96,Hospital Info
+transfer,CAUSE1_V193,0.33880371781418045,97,Injury Variables
+transfer,BLADCATH,0.32656563707395375,98,Procedure Variables
+transfer,PAYTYPER_Medicare,0.3216508187957362,99,Patient Socioeconomic Demographic Variables
+transfer,obshosp_yes,0.31667057446568164,100,Hospital ED Info Variables
+transfer,VMONTH_March,0.3116232130478693,101,Info Collected at Triage
+transfer,hospcode_64,0.3015101563738268,102,Hospital Info
+transfer,CAUSE2_Y920,-0.29645681008342956,103,Injury Variables
+transfer,DEPRN,0.2853123112380623,104,Chronic Disease Variables
+transfer,divhr_unk,-0.28379352647032047,105,Hospital ED Info Variables
+transfer,hospcode_87,0.2763313579558438,106,Hospital Info
+transfer,CEBVD,0.2763279850958728,107,Chronic Disease Variables
+transfer,T509_no,0.2714042013927593,108,Diagnosis and Med Provider Evaluation Variables
+transfer,CAUSE2_Y921,0.258921894904536,109,Injury Variables
+transfer,VMONTH_January,-0.25555895033891496,110,Info Collected at Triage
+transfer,cc_Injury_cause_status,0.2535560716757133,111,Chief Complaint Variables
+transfer,INTENT15_Intentional,0.24347398792504046,112,Injury Variables
+transfer,hhsmue_yes,-0.24314514427589415,113,Hospital ED Info Variables
+transfer,emedres,-0.23852397183505367,114,Hospital ED Info Variables
+transfer,hospcode_140,-0.22823042446508748,115,Hospital Info
+transfer,CAUSE3_Y923,0.2226985777620698,116,Injury Variables
+transfer,hospcode_66,-0.2173366501685941,117,Hospital Info
+transfer,NOCHRON,-0.2096894395411847,118,Chronic Disease Variables
+transfer,cc_Blood_dz,-0.2055736870428407,119,Chief Complaint Variables
+transfer,`IMMEDR_No triage for this visit but ESA does conduct triage`,0.20392639887577615,120,Other
+transfer,hospcode_98,0.20175238549086186,121,Hospital Info
+transfer,IMMEDR_Nonurgent,-0.2002154287205292,122,Info Collected at Triage
+transfer,cc_Progress_visit,-0.1894195260060559,123,Chief Complaint Variables
+transfer,hospcode_142,-0.18682270377799337,124,Hospital Info
+transfer,cc_Sx_musculoskeletal,-0.14993656823913337,125,Chief Complaint Variables
+transfer,CAUSE1_W050,0.14634110784992982,126,Injury Variables
+transfer,hospcode_103,-0.1343487023452183,127,Hospital Info
+transfer,hospcode_101,-0.13124880776571998,128,Hospital Info
+transfer,`RACEUN_Asian Only`,0.11535845141136004,129,Other
+transfer,U071_no,-0.11405042258168209,130,Diagnosis and Med Provider Evaluation Variables
+transfer,obsphysot_no,0.11386984658844682,131,Hospital ED Info Variables
+transfer,cc_Sx_digestive,-0.10829518329132215,132,Chief Complaint Variables
+transfer,cc_Administrative,0.10742343228375373,133,Chief Complaint Variables
+transfer,n_med_er,0.09561895571855072,134,Other
+transfer,R418_no,-0.09301589633034453,135,Diagnosis and Med Provider Evaluation Variables
+transfer,OSTPRSIS,0.09241065971735367,136,Chronic Disease Variables
+transfer,hospcode_150,-0.08689400785452796,137,Hospital Info
+transfer,`AGER_45_64 years`,-0.08464158903662136,138,Other
+transfer,hospcode_11,0.0778414188821529,139,Hospital Info
+transfer,hospcode_106,0.06800247821855977,140,Hospital Info
+transfer,cc_Test_results,0.0646304441130428,141,Chief Complaint Variables
+transfer,VDAYR_Saturday,0.05947557621948397,142,Info Collected at Triage
+transfer,cc_Exam_special,0.059364819261947366,143,Chief Complaint Variables
+transfer,CAUSE1_V494,-0.053611493043687376,144,Injury Variables
+transfer,F121_no,0.04184107754626488,145,Diagnosis and Med Provider Evaluation Variables
+transfer,edinfo_no,0.039323150592966795,146,Hospital ED Info Variables
+transfer,ETOHAB,-0.03378462441728297,147,Chronic Disease Variables
+transfer,regdiv,-0.03284789478652167,148,Hospital ED Info Variables
+transfer,beddata_instant,-0.032042929730971066,149,Hospital ED Info Variables
+transfer,hospcode_44,0.029258560553551364,150,Hospital Info
+transfer,CHF,0.026442756467494156,151,Chronic Disease Variables
+transfer,TEMPF,-0.02536973899783513,152,Initial Vitals Variables
+transfer,hospcode_134,0.02529082821545817,153,Hospital Info
+transfer,SEX_Female,-0.02455154517923479,154,Patient Socioeconomic Demographic Variables
+transfer,divhr_499,-0.018971003252066816,155,Hospital ED Info Variables
+transfer,VDAYR_Friday,0.01686132077470977,156,Info Collected at Triage
+transfer,VMONTH_April,-0.014540993015937732,157,Info Collected at Triage
+transfer,med_binary,-0.013575037962911655,158,Other
+transfer,hlist,-0.012728668597494329,159,Hospital ED Info Variables
+transfer,surgday,-0.011083913166441589,160,Hospital ED Info Variables
+transfer,obssep,0.00982946727840445,161,Hospital ED Info Variables
+transfer,seen72,0.007320003575322,162,Other
+transfer,DIABTYP2,0.00560377063154685,163,Chronic Disease Variables
+transfer,BPDIAS,-0.0011169829635912039,164,Initial Vitals Variables
+transfer,hospcode_69,-8.888923305576075e-4,165,Hospital Info
+transfer,LOV,7.188038888048008e-4,166,Hospital Usage Variables
+transfer,SEX_Male,2.3833809072467926e-4,167,Patient Socioeconomic Demographic Variables

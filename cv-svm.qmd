@@ -1,0 +1,68 @@
+---
+title: "SVM Hyperparameter tuning"
+---
+
+```{r}
+gp_df <- read_csv('processed_data/df_grouping.csv')
+```
+
+```{r}
+gp_df <- gp_df |> select(-disposit)
+```
+
+```{r}
+gp_df <- gp_df |> select(-patcode, -hospcode)
+```
+
+```{r}
+gp_df |> dim()
+```
+
+```{r}
+gp_df$disp_group <- as.factor(gp_df$disp_group)
+```
+
+```{r}
+set.seed(5300)
+train_indices <- sample(6757, (6757 * 0.8))
+gp_train <- gp_df |> slice(train_indices)
+gp_test <- gp_df |>slice(-train_indices)
+```
+
+```{r}
+gp_test |> dim()
+```
+
+```{r}
+
+```
+```{r}
+X_train <- model.matrix(disp_group ~ ., data = gp_train)[,-1]
+Y_train <- as.factor(gp_train$disp_group)
+X_test <- model.matrix(disp_group ~ ., data = gp_test)[,-1]
+Y_test <- as.factor(gp_test$disp_group)
+```
+
+```{r}
+library(e1071)
+```
+```{r}
+# svm_rbf <- svm(x = X_train, y = Y_train, kernel = "radial", probability = TRUE)
+```
+
+```{r}
+gp_df <- gp_df |> select(-arrtime)
+```
+
+```{r}
+tune_out <- tune(svm, disp_group ~., data = gp_df, kernel = 'radial', scale = FALSE,ranges = list(cost = c(0.001 , 0.01 , 0.1, 1, 5, 10, 100)))
+summary(tune_out)
+```
+
+```{r}
+tune_out$best.model
+```
+
+```{r}
+
+```

@@ -1,0 +1,327 @@
+
+```{r}
+library(tidyverse)
+library(nnet)
+```
+
+```{r}
+# df_fini <- read_csv('processed_data/clean_df_full.csv')
+```
+
+```{r}
+# colSums(is.na(df_fini))[colSums(is.na(df_fini)) > 0]
+```
+
+```{r}
+fini_df$disposition <- as.factor(fini_df$disposition)
+```
+
+```{r}
+trainset <- fini_df |> slice(train_indices)
+testset <- fini_df |> slice(-train_indices)
+trainset |> dim()
+```
+
+```{r}
+library(nnet)
+```
+
+```{r}
+fini_df <- fini_df |> mutate(surgday = case_when(
+    is.na(surgday) ~ 0,
+    TRUE ~ surgday
+))
+```
+
+```{r}
+mod <- multinom(disposition ~., data = trainset, MaxNWts = 20000)
+predict(mod, newdata = testset, type = "class")
+
+```
+
+```{r}
+library(glmnet)
+x_train <- model.matrix(disposition ~ . - 1, data = trainset)
+y_train <- trainset$disposition
+cv_fit <- cv.glmnet(x_train, y_train, family = "multinomial", type.measure = "class")
+cv_fit
+```
+
+```{r}
+x_test <- model.matrix(disposition ~ . -1, data = testset)
+y_test <- testset$disposition
+y_pred <- predict(glm0, newx = x_test, s = 50)
+```
+
+```{r}
+x_test <- model.matrix(disposition ~ . -1, data = testset)
+y_test <- testset$disposition
+```
+
+```{r}
+glm0$lambda
+```
+
+```{r}
+glm0 <- glmnet(x_train, y_train, family = "multinomial", type.multinomial = "grouped")
+plot(glm0, xvar = "lambda", label = TRUE, type.coef = "2norm")
+```
+
+```{r}
+coef(glm0)
+```
+
+```{r}
+coef(glm0, s = 50) |> View()
+```
+
+```{r}
+predict(glm0, newx = test_df)
+```
+
+```{r}
+lambda_idx <- 50
+lambda_try <- glm0$lambda[lambda_idx]
+coefs <- coef(glm0, s = lambda_try)
+
+top20_vars_per_class <- lapply(names(coefs), function(class_name) {
+  coef_matrix <- coefs[[class_name]]
+  df <- as.data.frame(as.matrix(coef_matrix)) |>
+    rownames_to_column("variable") |>
+    rename(coef = 2) |>
+    filter(variable != "(Intercept)" & coef != 0) |>
+    arrange(desc(abs(coef))) |>
+    slice_head(n = 20) |>
+    mutate(class = class_name)
+  return(df)
+})
+
+top20_all <- bind_rows(top20_vars_per_class)
+top20_all
+
+```
+
+```{r}
+```
+```{r}
+fini_df |> write_csv('processed_data/clean_df_full.csv')
+```
+```{r}
+coef_list <- coef(cv_fit, s = "lambda.min")
+nonzero_vars <- lapply(coef_list, function(class_coef) {
+  rownames(class_coef)[which(class_coef != 0)]
+})
+
+nonzero_vars
+
+```
+
+```{r}
+colSums(is.na(fini_df))[colSums(is.na(fini_df)) > 0]
+```
+
+### 0423
+```{r}
+disp_cols <- c(
+  "NOFU", "RETRNED", "RETREFFU", "LWBS", "LBTC", "LEFTAMA",
+  "DOA", "DIEDED", "TRANNH", "TRANPSYC", "TRANOTH", 
+  "ADMITHOS", "OBSHOS", "OBSDIS", "OTHDISP"
+)
+ed_df$visit_disp <- apply(ed_df[disp_cols], 1, function(x) disp_cols[which(x == 'Yes')])
+ed_df$visit_disp <- as.factor(ed_df$visit_disp)
+```
+
+```{r}
+col_overview(ed_df, visit_disp)
+```
+
+```{r}
+chronic_df <- read_csv('processed_data/cc-vars.csv')
+```
+
+```{r}
+leftama <- ed_df |> select(LEFTAMA)
+```
+
+```{r}
+leftama$LEFTAMA <- leftama
+```
+
+```{r}
+model <- multinom(, data=d1)
+```
+
+## cooccur
+
+
+```{r}
+ed_df$disp_yes_count <- rowSums(ed_df[disp_cols] == "Yes")
+ed_df |> count(disp_yes_count, .drop = FALSE)
+
+```
+
+```{r}
+ed_df  |>
+  mutate(disp_combo = apply(across(all_of(disp_cols)), 1, function(x) {
+    paste(disp_cols[which(x == "Yes")], collapse = "_")
+  }))  |>
+  count(disp_combo, sort = TRUE)
+```
+
+```{r}
+disp_bin <- as.data.frame(lapply(ed_df[disp_cols], function(col) as.integer(col == "Yes")))
+co_matrix <- t(as.matrix(disp_bin)) %*% as.matrix(disp_bin)
+co_matrix_df <- as.data.frame(co_matrix)
+
+```
+
+```{r}
+disposition_tb
+```
+
+```{r}
+co_matrix |> print()
+```
+
+```{r}
+ed_df$left <- ifelse(
+  ed_df$LWBS == "Yes" | ed_df$LBTC == "Yes" | ed_df$LEFTAMA == "Yes",
+  1,
+  0
+)
+```
+
+```{r}
+left_df <- ed_df |> select(left)
+```
+
+```{r}
+col_overview(left_df, left)
+```
+
+```{r}
+cc_left_df <- chronic_df |> select(-PATCODE, -HOSPCODE)
+```
+
+```{r}
+cc_left_df <- bind_cols(cc_left_df, left_df)
+```
+
+```{r}
+
+```
+```{r}
+set.seed(5300)
+train_indices <- sample(16025, 13622)
+
+train_df <- cc_left_df |> slice(train_indices)
+test_df <- cc_left_df |> slice(-train_indices)
+train_df |> dim()
+```
+
+```{r}
+model <- glm(left ~., data = train_df, family = binomial)
+```
+
+```{r}
+model |> summary()
+```
+
+```{r}
+pred_probs <- predict(model, newdata = test_df, type = "response")
+
+pred_class <- ifelse(pred_probs >= 0.5, 1, 0)
+conf_matrix <- table(Predicted = pred_class, Actual = test_df$left)
+conf_matrix
+
+```
+
+```{r}
+model <- glm(left ~ ., 
+             data = train_df, 
+             family = binomial, 
+             weights = ifelse(train_df$left == 1, 5, 1))
+
+```
+
+```{r}
+library(caret)
+
+cm <- confusionMatrix(
+  factor(pred_class),
+  factor(test_df$left),
+  positive = "1"
+)
+
+cm$overall["Accuracy"]
+
+```
+
+```{r}
+levels <- c("0", "1")
+pred_class <- factor(pred_class, levels = levels)
+test_left <- factor(test_df$left, levels = levels)
+confusionMatrix(pred_class, test_left, positive = "1")
+
+```
+
+
+```{r}
+disposition_tb |> print()
+```
+
+
+```{r}
+disposition_priority <- c(
+  "DIEDED" = 10,
+  "DOA" = 10,
+  "ADMITHOS" = 9,
+  "TRANNH" = 8,
+  "TRANPSYC" = 8,
+  "TRANOTH" = 8,
+  "OBSHOS" = 7,
+  "OBSDIS" = 7,
+  "LEFTAMA" = 6,
+  "LBTC" = 5,
+  "LWBS" = 5,
+  "RETREFFU" = 4,
+  "RETRNED" = 3,
+  "OTHDISP" = 2,
+  "NOFU" = 1
+)
+
+```
+
+```{r}
+ed_df$visit_disp
+```
+
+```{r}
+ed_df <- ed_df |> mutate(priority = disposition_priority[visit_disp])
+```
+
+```{r}
+ed_long <- ed_df |>
+  pivot_longer(cols = all_of(disp_cols),
+               names_to = "disposition",
+               values_to = "present") |>
+  filter(present == "Yes") |>
+  mutate(priority = disposition_priority[disposition])
+final_dispo <- ed_long |>
+  group_by(HOSPCODE, PATCODE) |>
+  slice_max(order_by = priority, n = 1, with_ties = FALSE) |>
+  ungroup()
+
+```
+
+```{r}
+final_dispo <- ed_long |>
+  group_by(HOSPCODE, PATCODE) |>
+  slice_max(order_by = priority, n = 1, with_ties = FALSE) |>
+  ungroup()
+
+```
+
+```{r}
+
+```
